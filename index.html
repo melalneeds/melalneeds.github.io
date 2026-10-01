@@ -3,328 +3,429 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>درخواست خدمات و مشاوره | شرکت دید گستر ملل پیشرو</title>
+<title>شرکت دید گستر ملل | درخواست خدمات و مشاوره</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
 
 :root{
-  --purple:#6d1b78;
-  --purple2:#8d38b4;
-  --purple3:#4b1458;
-  --navy:#111a4b;
-  --text:#18235b;
-  --muted:#69708c;
-  --bg:#f6f7fc;
+  --navy:#08143d;
+  --blue:#203a9b;
+  --purple:#5630c9;
+  --purple2:#7b42e8;
+  --light:#f6f8ff;
+  --text:#10256f;
+  --muted:#65709a;
+  --line:#dfe5f5;
   --white:#fff;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:var(--bg);
+  background:#f7f9ff;
   color:var(--text);
-  font-family:'Vazirmatn',Tahoma,Arial,sans-serif;
+  font-family:"Vazirmatn",Tahoma,Arial,sans-serif;
 }
-.page{max-width:1200px;margin:auto;background:#fff;min-height:100vh;box-shadow:0 0 30px rgba(25,25,70,.08)}
+button,input,select,textarea{font:inherit}
+a{text-decoration:none;color:inherit}
+
+.wrap{width:min(1280px,calc(100% - 40px));margin:auto}
+
+/* HEADER */
 .hero{
+  min-height:190px;
   position:relative;
-  min-height:300px;
   overflow:hidden;
+  color:#fff;
+  background:
+    linear-gradient(105deg,rgba(4,17,54,.78),rgba(20,27,89,.92)),
+    url("header-bg.jpg") center/cover no-repeat;
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(110deg,transparent 35%,rgba(95,48,210,.35) 58%,rgba(21,18,74,.7));
+  pointer-events:none;
+}
+.hero-inner{
+  position:relative;
+  z-index:2;
+  min-height:190px;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:24px;
+  padding:24px 28px;
+}
+.hero-title{text-align:center}
+.hero-title h1{
+  margin:0 0 8px;
+  font-size:38px;
+  font-weight:900;
+  text-shadow:0 3px 10px rgba(0,0,0,.25);
+}
+.hero-title p{
+  margin:0 0 18px;
+  font-size:19px;
+  font-weight:700;
+}
+.hero-btn{
+  display:inline-flex;
+  padding:10px 35px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#7435dc,#934be8);
+  box-shadow:0 7px 18px rgba(0,0,0,.25);
+  font-weight:800;
+}
+.brand{
   display:flex;
   align-items:center;
   justify-content:center;
-  background:url('header-bg.jpg') center/cover no-repeat;
-  color:#fff;
+  gap:12px;
 }
-.hero::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(8,18,52,.18),rgba(8,18,52,.42));
+.brand img{
+  width:92px;height:92px;object-fit:contain;
+  border-radius:16px;
+  background:rgba(255,255,255,.06);
+  padding:6px;
 }
-.hero-inner{
-  position:relative;z-index:2;
-  width:min(1080px,92%);
-  display:flex;align-items:center;justify-content:space-between;
-  gap:30px;
+.brand-name{font-size:23px;font-weight:900;line-height:1.5}
+.brand-name small{display:block;color:#b995ff;font-size:15px}
+.hero-services{
+  border-right:1px solid rgba(255,255,255,.45);
+  padding-right:28px;
+  display:grid;
+  gap:10px;
+  font-weight:700;
+  font-size:15px;
 }
-.hero-copy{text-align:right;flex:1}
-.hero h1{font-size:42px;margin:0 0 8px;font-weight:800;text-shadow:0 3px 10px rgba(0,0,0,.25)}
-.hero h2{font-size:21px;margin:0 0 22px;font-weight:500}
-.hero-badge{
-  display:inline-block;padding:12px 34px;border-radius:30px;
-  background:linear-gradient(90deg,#8d39c2,#b04bd0);
-  color:#fff;font-weight:800;box-shadow:0 8px 25px rgba(0,0,0,.22)
+.hero-services span{display:flex;align-items:center;gap:10px}
+.hero-services b{font-size:20px;color:#d9c7ff}
+
+/* SECTION */
+.section{padding:20px 0 0}
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+  margin:0 0 7px;
 }
-.hero-logo{
-  width:126px;height:126px;object-fit:contain;border-radius:22px;
-  background:rgba(255,255,255,.96);padding:8px;
-  box-shadow:0 10px 28px rgba(0,0,0,.24);
-  border:2px solid rgba(255,255,255,.85)
+.section-head:before,.section-head:after{
+  content:"";height:2px;background:#2b42a4;flex:1;max-width:340px
 }
-.section{padding:38px 32px}
-.section-title{
-  display:flex;align-items:center;gap:18px;justify-content:center;
-  color:#26388f;font-size:30px;font-weight:800;margin:0 0 8px
-}
-.section-title:before,.section-title:after{
-  content:"";height:2px;background:#3345aa;flex:0 1 220px
-}
-.section-subtitle{text-align:center;color:#59617e;margin:0 0 28px;font-size:15px}
+.section-head h2{margin:0;font-size:29px;font-weight:900;white-space:nowrap}
+.section-sub{text-align:center;margin:0 0 20px;color:#26386d;font-size:14px}
+
+/* SERVICE CARDS */
 .services{
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:20px;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
 }
 .card{
-  min-width:0;background:#fff;border:1px solid #e3e6f2;
-  border-radius:18px;overflow:hidden;position:relative;
-  box-shadow:0 7px 22px rgba(35,42,90,.09);
-  transition:.2s ease;cursor:pointer;
-}
-.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(35,42,90,.15)}
-.card-media{
-  position:relative;
-  width:100%;
-  height:172px;
+  background:#fff;
+  border:1px solid #e1e6f2;
+  border-radius:16px;
   overflow:hidden;
-  background:#eef0f7;
+  box-shadow:0 6px 20px rgba(31,49,102,.08);
+  position:relative;
+  min-width:0;
+  cursor:pointer;
+  transition:.2s ease;
 }
-.card-img{
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(31,49,102,.13)}
+.card-photo{
+  height:145px;
+  width:100%;
+  overflow:hidden;
+  position:relative;
+  background:#e8ecf7;
+}
+.card-photo img{
   width:100%;
   height:100%;
   display:block;
   object-fit:cover;
   object-position:center center;
-  background:#eef0f7;
 }
-.card-body{padding:30px 15px 17px;min-height:105px;position:relative}
-.card h3{font-size:17px;margin:0 0 7px;font-weight:800;color:#1c2c79}
-.card p{font-size:12.5px;line-height:1.9;margin:0;color:#6b7188}
-.card-arrow{
-  position:absolute;left:12px;bottom:15px;width:26px;height:26px;
-  border-radius:50%;background:#eef0ff;color:#3345aa;
-  display:flex;align-items:center;justify-content:center;font-weight:800
+.card-icon{
+  position:absolute;
+  bottom:-18px;
+  right:24px;
+  width:54px;height:54px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;
+  background:linear-gradient(145deg,#5d38cf,#4224b0);
+  border:5px solid #fff;
+  box-shadow:0 4px 12px rgba(35,26,113,.22);
+  font-size:23px;
+  z-index:4;
 }
-.icon{
-  position:absolute;right:14px;bottom:-24px;width:48px;height:48px;border-radius:50%;
-  background:linear-gradient(145deg,#4b45b8,#7441cf);
-  color:#fff;border:4px solid #fff;display:flex;align-items:center;justify-content:center;
-  font-size:21px;box-shadow:0 5px 12px rgba(40,35,120,.25);
-  z-index:5;
+.card-body{height:86px;padding:24px 18px 12px;position:relative}
+.card-body h3{margin:0 0 5px;font-size:16px;font-weight:900}
+.card-body p{margin:0;color:#7a83a1;font-size:11px;line-height:1.7}
+.arrow{
+  position:absolute;left:12px;bottom:14px;
+  width:25px;height:25px;border-radius:50%;
+  background:#f0f3ff;display:flex;align-items:center;justify-content:center;
+  color:#263ca2;font-weight:900;
 }
-.request{
-  background:linear-gradient(180deg,#f5f7ff,#eef2fb);
-  border-top:1px solid #e2e5f0;
-  padding:35px 32px
+
+/* LOWER */
+.lower{
+  display:grid;
+  grid-template-columns:33% 1fr;
+  gap:25px;
+  margin-top:18px;
+  align-items:stretch;
 }
-.request-grid{display:grid;grid-template-columns:1fr 1.7fr;gap:28px;align-items:stretch}
 .why{
-  background:linear-gradient(145deg,#202d94,#3a42a7);
-  color:#fff;border-radius:20px;padding:28px;
+  color:#fff;
+  border-radius:14px;
+  padding:24px 28px;
+  background:
+    linear-gradient(110deg,rgba(18,33,128,.95),rgba(62,33,169,.96)),
+    url("header-bg.jpg") center/cover;
 }
-.why h3{font-size:25px;margin:0 0 20px}
-.why p{margin:12px 0;font-size:14px;line-height:2}
+.why h3{margin:0 0 18px;font-size:22px}
+.why ul{padding:0;margin:0;list-style:none;display:grid;gap:10px;font-size:14px}
+.why li:before{content:"✓";margin-left:8px;font-weight:900}
+.contact-buttons{display:flex;gap:10px;margin-top:22px}
+.contact-buttons a{
+  flex:1;padding:10px 7px;text-align:center;border-radius:24px;color:#fff;font-weight:800;font-size:12px
+}
+.wa{background:#18b95b}.ei{background:#ff8b00}.ch{background:#1597e9}
+
 .form-box{
-  background:#fff;border-radius:20px;padding:22px;
-  box-shadow:0 8px 25px rgba(30,40,100,.08)
+  background:#fff;
+  border-radius:16px;
+  padding:20px 22px;
+  border:1px solid #e3e8f4;
 }
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.form-title{font-size:22px;font-weight:900;margin:0 0 12px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .field{
-  width:100%;border:1px solid #dce1ef;border-radius:12px;padding:13px 14px;
-  font:inherit;color:#28325e;background:#fff;outline:none
+  border:1px solid #dce2ef;border-radius:10px;background:#fff;
+  height:43px;padding:0 13px;display:flex;align-items:center
 }
-.field:focus{border-color:#7650c9;box-shadow:0 0 0 3px rgba(118,80,201,.1)}
-textarea.field{min-height:105px;resize:vertical;grid-column:1/-1}
-.full{grid-column:1/-1}
+.field input,.field select{
+  width:100%;border:0;outline:0;background:transparent;color:#66708f
+}
+.field.full{grid-column:1/-1;height:75px;align-items:flex-start;padding-top:10px}
+.field textarea{width:100%;height:55px;border:0;outline:0;resize:none;color:#66708f}
 .submit{
-  width:100%;border:0;border-radius:13px;padding:14px;
-  color:#fff;font:800 16px inherit;cursor:pointer;
-  background:linear-gradient(90deg,#5136b8,#8242c8);
-  box-shadow:0 8px 18px rgba(90,55,180,.2)
+  border:0;cursor:pointer;width:58%;height:43px;margin-top:10px;
+  color:#fff;border-radius:9px;font-weight:900;
+  background:linear-gradient(90deg,#4e2abb,#7541df)
 }
-.links{display:flex;gap:10px;margin-top:15px;flex-wrap:wrap}
-.link-btn{
-  flex:1;text-align:center;text-decoration:none;padding:11px 14px;border-radius:12px;
-  color:#fff;font-weight:700;min-width:140px
+.form-note{font-size:11px;color:#6b7591;margin-top:10px}
+
+/* FOOTER */
+footer{
+  margin-top:18px;
+  background:#08143d;color:#fff;
+  padding:22px 0;
 }
-.whatsapp{background:#20b95a}.eitaa{background:#ef8b12}.channel{background:#168be8}
-.status{text-align:center;color:#69708c;font-size:12px;margin-top:10px}
-.footer{
-  background:linear-gradient(110deg,#11183f,#28124b);color:#fff;
-  padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px
+.footer-inner{
+  display:grid;grid-template-columns:1fr 1fr 1.2fr 1fr;align-items:center;gap:20px
 }
-.footer img{width:70px;height:70px;object-fit:contain;background:#fff;border-radius:14px;padding:5px}
-.footer strong{font-size:18px}.footer small{display:block;color:#d8d9ed;margin-top:5px}
-@media(max-width:900px){
-  .services{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .request-grid{grid-template-columns:1fr}
-  .hero h1{font-size:32px}
+.footer-item{display:flex;align-items:center;gap:10px;font-size:13px}
+.footer-icon{
+  width:42px;height:42px;border-radius:50%;
+  background:#5231bd;display:flex;align-items:center;justify-content:center;font-size:19px
 }
-@media(max-width:600px){
-  .hero{min-height:260px}
-  .hero-inner{flex-direction:column-reverse;text-align:center;padding:28px 0}
-  .hero-copy{text-align:center}
-  .hero-logo{width:100px;height:100px}
-  .hero h1{font-size:27px}
-  .hero h2{font-size:16px}
-  .section,.request{padding:27px 15px}
-  .section-title{font-size:22px}
-  .section-title:before,.section-title:after{display:none}
-  .services{grid-template-columns:1fr 1fr;gap:12px}
-  .card h3{font-size:14px}
-  .card p{font-size:11px}
-  .card-media{height:135px}
-  .card-body{min-height:94px;padding:28px 11px 11px}
-  .icon{width:39px;height:39px;bottom:-20px;right:9px;font-size:16px}
+.footer-brand{text-align:center}
+.footer-brand img{width:58px;height:58px;object-fit:contain}
+.footer-brand strong{display:block;font-size:14px}
+.slogan{text-align:center;font-size:18px;font-style:italic}
+.brands{text-align:left;font-size:20px;font-weight:900}
+.brands span{margin-right:12px}
+
+/* MOBILE */
+@media(max-width:1050px){
+  .hero-inner{grid-template-columns:1fr auto}
+  .hero-services{display:none}
+  .services{grid-template-columns:repeat(2,1fr)}
+  .lower{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:650px){
+  .wrap{width:min(100% - 22px,1280px)}
+  .hero,.hero-inner{min-height:235px}
+  .hero-inner{grid-template-columns:1fr;gap:10px;text-align:center}
+  .brand{order:-1}
+  .brand img{width:64px;height:64px}
+  .brand-name{font-size:17px}
+  .hero-title h1{font-size:27px}
+  .hero-title p{font-size:14px}
+  .hero-btn{padding:9px 25px}
+  .services{grid-template-columns:1fr 1fr;gap:9px}
+  .card-photo{height:125px}
+  .card-icon{width:45px;height:45px;right:12px;bottom:-15px;font-size:18px}
+  .card-body{height:82px;padding:22px 11px 8px}
+  .card-body h3{font-size:13px}
+  .card-body p{font-size:9px}
+  .arrow{left:8px;bottom:10px;width:22px;height:22px}
+  .section-head h2{font-size:22px}
+  .section-head{gap:10px}
   .form-grid{grid-template-columns:1fr}
-  .full,textarea.field{grid-column:auto}
-  .footer{flex-direction:column;text-align:center}
+  .field.full{grid-column:auto}
+  .submit{width:100%}
+  .footer-inner{grid-template-columns:1fr;text-align:center}
+  .footer-item,.brands{justify-content:center;text-align:center}
 }
 </style>
 </head>
 <body>
-<div class="page">
 
 <header class="hero">
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <h1>شرکت دید گستر ملل</h1>
-      <h2>تخصص ما، امنیت شماست</h2>
-      <span class="hero-badge">امنیت شما اعتبار ماست</span>
+  <div class="hero-inner wrap">
+    <div class="brand">
+      <img src="logo.png.jpg" alt="لوگوی دید گستر ملل">
+      <div class="brand-name">دید گستر ملل<small>پیشرو</small></div>
     </div>
-    <img class="hero-logo" src="logo.png.jpg" alt="لوگوی دید گستر ملل">
+
+    <div class="hero-title">
+      <h1>شرکت دید گستر ملل</h1>
+      <p>تخصص ما، امنیت شماست</p>
+      <a class="hero-btn" href="#request">امنیت شما اعتبار ماست</a>
+    </div>
+
+    <div class="hero-services">
+      <span><b>▣</b> دوربین مداربسته</span>
+      <span><b>♢</b> دزدگیر اماکن</span>
+      <span><b>⌘</b> شبکه و زیرساخت</span>
+      <span><b>▣</b> UPS • هارد دیسک</span>
+    </div>
   </div>
 </header>
 
-<section class="section">
-  <h2 class="section-title">درخواست خدمات و مشاوره</h2>
-  <p class="section-subtitle">لطفاً نوع نیاز خود را انتخاب کنید تا کارشناسان ما در سریع‌ترین زمان با شما تماس بگیرند.</p>
+<main class="wrap section">
+  <div class="section-head"><h2>درخواست خدمات و مشاوره</h2></div>
+  <p class="section-sub">لطفاً نوع نیاز خود را انتخاب کنید تا کارشناسان ما در سریع‌ترین زمان با شما تماس بگیرند.</p>
 
-  <div class="services">
-    <article class="card" onclick="selectService('بازدید از محل')">
-      <div class="card-media"><img class="card-img" src="service1.jpg" alt="بازدید از محل"><span class="icon">📍</span></div>
-      <div class="card-body"><h3>بازدید از محل</h3><p>بازدید و بررسی رایگان مجموعه</p><span class="card-arrow">‹</span></div>
+  <section class="services">
+    <article class="card" onclick="selectNeed('دریافت لیست قیمت')">
+      <div class="card-photo"><img src="service1.jpg" alt="دریافت لیست قیمت"><div class="card-icon">▤</div></div>
+      <div class="card-body"><h3>دریافت لیست قیمت</h3><p>لیست کامل تجهیزات و برندها</p><span class="arrow">›</span></div>
     </article>
-    <article class="card" onclick="selectService('مشاوره رایگان')">
-      <div class="card-media"><img class="card-img" src="service2.jpg" alt="مشاوره رایگان"><span class="icon">💬</span></div>
-      <div class="card-body"><h3>مشاوره رایگان</h3><p>ارائه راهکار متناسب با نیاز شما</p><span class="card-arrow">‹</span></div>
-    </article>
-    <article class="card" onclick="selectService('استعلام قیمت')">
-      <div class="card-media"><img class="card-img" src="service3.jpg" alt="استعلام قیمت"><span class="icon">🧾</span></div>
-      <div class="card-body"><h3>استعلام قیمت</h3><p>دریافت قیمت به‌روز تجهیزات</p><span class="card-arrow">‹</span></div>
-    </article>
-    <article class="card" onclick="selectService('دریافت لیست قیمت')">
-      <div class="card-media"><img class="card-img" src="service4.jpg" alt="لیست قیمت"><span class="icon">📋</span></div>
-      <div class="card-body"><h3>دریافت لیست قیمت</h3><p>لیست کامل تجهیزات و برندها</p><span class="card-arrow">‹</span></div>
-    </article>
-    <article class="card" onclick="selectService('خرید و اجرای دوربین')">
-      <div class="card-media"><img class="card-img" src="service5.jpg" alt="خرید و اجرای دوربین"><span class="icon">📹</span></div>
-      <div class="card-body"><h3>خرید و اجرای دوربین</h3><p>نصب حرفه‌ای و استاندارد</p><span class="card-arrow">‹</span></div>
-    </article>
-    <article class="card" onclick="selectService('عیب‌یابی و تعمیر')">
-      <div class="card-media"><img class="card-img" src="service6.jpg" alt="عیب یابی و تعمیر"><span class="icon">🔧</span></div>
-      <div class="card-body"><h3>عیب‌یابی و تعمیر</h3><p>رفع مشکل و بازگشت به عملکرد</p><span class="card-arrow">‹</span></div>
-    </article>
-    <article class="card" onclick="selectService('ارتقای سیستم قدیمی')">
-      <div class="card-media"><img class="card-img" src="service7.jpg" alt="ارتقای سیستم قدیمی"><span class="icon">⬆️</span></div>
-      <div class="card-body"><h3>ارتقای سیستم قدیمی</h3><p>تبدیل آنالوگ به تحت شبکه</p><span class="card-arrow">‹</span></div>
-    </article>
-    <article class="card" onclick="selectService('دوربین و شبکه کارخانه')">
-      <div class="card-media"><img class="card-img" src="service8.jpg" alt="دوربین و شبکه کارخانه"><span class="icon">🏭</span></div>
-      <div class="card-body"><h3>دوربین و شبکه کارخانه</h3><p>راهکار امنیتی برای مجموعه‌های صنعتی</p><span class="card-arrow">‹</span></div>
-    </article>
-  </div>
-</section>
 
-<section class="request" id="request">
-  <div class="request-grid">
-    <div class="why">
+    <article class="card" onclick="selectNeed('استعلام قیمت')">
+      <div class="card-photo"><img src="service2.jpg" alt="استعلام قیمت"><div class="card-icon">▱</div></div>
+      <div class="card-body"><h3>استعلام قیمت</h3><p>دریافت قیمت به‌روز تجهیزات</p><span class="arrow">›</span></div>
+    </article>
+
+    <article class="card" onclick="selectNeed('مشاوره رایگان')">
+      <div class="card-photo"><img src="service3.jpg" alt="مشاوره رایگان"><div class="card-icon">☷</div></div>
+      <div class="card-body"><h3>مشاوره رایگان</h3><p>ارائه راهکار متناسب با نیاز شما</p><span class="arrow">›</span></div>
+    </article>
+
+    <article class="card" onclick="selectNeed('بازدید از محل')">
+      <div class="card-photo"><img src="service4.jpg" alt="بازدید از محل"><div class="card-icon">●</div></div>
+      <div class="card-body"><h3>بازدید از محل</h3><p>بازدید و بررسی رایگان مجموعه</p><span class="arrow">›</span></div>
+    </article>
+
+    <article class="card" onclick="selectNeed('دوربین و شبکه کارخانه')">
+      <div class="card-photo"><img src="service5.jpg" alt="دوربین و شبکه کارخانه"><div class="card-icon">▥</div></div>
+      <div class="card-body"><h3>دوربین و شبکه کارخانه</h3><p>راهکار امنیتی برای مجموعه‌های صنعتی</p><span class="arrow">›</span></div>
+    </article>
+
+    <article class="card" onclick="selectNeed('ارتقای سیستم قدیمی')">
+      <div class="card-photo"><img src="service6.jpg" alt="ارتقای سیستم قدیمی"><div class="card-icon">↗</div></div>
+      <div class="card-body"><h3>ارتقای سیستم قدیمی</h3><p>تبدیل آنالوگ به تحت شبکه</p><span class="arrow">›</span></div>
+    </article>
+
+    <article class="card" onclick="selectNeed('عیب‌یابی و تعمیر')">
+      <div class="card-photo"><img src="service7.jpg" alt="عیب‌یابی و تعمیر"><div class="card-icon">⌕</div></div>
+      <div class="card-body"><h3>عیب‌یابی و تعمیر</h3><p>رفع مشکل و بازگشت به عملکرد</p><span class="arrow">›</span></div>
+    </article>
+
+    <article class="card" onclick="selectNeed('خرید و اجرای دوربین')">
+      <div class="card-photo"><img src="service8.jpg" alt="خرید و اجرای دوربین"><div class="card-icon">▣</div></div>
+      <div class="card-body"><h3>خرید و اجرای دوربین</h3><p>نصب و راه‌اندازی حرفه‌ای</p><span class="arrow">›</span></div>
+    </article>
+  </section>
+
+  <section class="lower" id="request">
+    <aside class="why">
       <h3>چرا دید گستر ملل؟</h3>
-      <p>✓ تجربه و تخصص در پروژه‌های صنعتی</p>
-      <p>✓ استفاده از تجهیزات اصلی و برندهای معتبر</p>
-      <p>✓ پشتیبانی و خدمات پس از فروش</p>
-      <p>✓ قیمت مناسب و مشاوره تخصصی</p>
-    </div>
-    <div class="form-box">
-      <h2 style="margin:0 0 17px;color:#202d7e">اطلاعات خود را وارد کنید</h2>
-      <div class="form-grid">
-        <input id="name" class="field" placeholder="نام و نام خانوادگی *">
-        <input id="phone" class="field" placeholder="شماره تماس *" inputmode="tel">
-        <input id="company" class="field" placeholder="نام مجموعه / شرکت">
-        <select id="service" class="field">
-          <option value="">نوع نیاز را انتخاب کنید *</option>
-          <option>بازدید از محل</option>
-          <option>مشاوره رایگان</option>
-          <option>استعلام قیمت</option>
-          <option>دریافت لیست قیمت</option>
-          <option>خرید و اجرای دوربین</option>
-          <option>عیب‌یابی و تعمیر</option>
-          <option>ارتقای سیستم قدیمی</option>
-          <option>دوربین و شبکه کارخانه</option>
-        </select>
-        <textarea id="note" class="field" placeholder="توضیحات بیشتر (اختیاری)"></textarea>
-        <div class="full">
-          <button class="submit" onclick="submitForm()">ثبت درخواست و تماس با من</button>
-          <div class="links">
-            <a class="link-btn whatsapp" href="https://wa.me/989134286813" target="_blank">واتساپ</a>
-            <a class="link-btn eitaa" href="https://eitaa.com/melaldoorbin_app" target="_blank">ایتا</a>
-            <a class="link-btn channel" href="https://eitaa.com/melaldoorbin_app" target="_blank">کانال ایتا</a>
-          </div>
-          <div id="status" class="status">پاسخگویی سریع • برای ثبت درخواست فرم را تکمیل کنید.</div>
-        </div>
+      <ul>
+        <li>تجربه و تخصص در پروژه‌های صنعتی</li>
+        <li>استفاده از تجهیزات اصلی و برندهای معتبر</li>
+        <li>پشتیبانی و خدمات پس از فروش</li>
+        <li>قیمت مناسب و مشاوره تخصصی</li>
+      </ul>
+      <div class="contact-buttons">
+        <a class="wa" href="https://wa.me/989134286813" target="_blank">واتساپ</a>
+        <a class="ei" href="https://eitaa.com/melaldoorbin_app" target="_blank">ایتا</a>
+        <a class="ch" href="https://eitaa.com/melaldoorbin_app" target="_blank">کانال ایتا</a>
       </div>
-    </div>
-  </div>
-</section>
+    </aside>
 
-<footer class="footer">
-  <div><strong>09134286813</strong><small>برای مشاوره و ثبت درخواست</small></div>
-  <img src="logo.png.jpg" alt="لوگو">
-  <div><strong>شرکت دید گستر ملل پیشرو</strong><small>تخصص ما، امنیت شماست</small></div>
+    <section class="form-box">
+      <h3 class="form-title">اطلاعات خود را وارد کنید</h3>
+      <form onsubmit="submitForm(event)">
+        <div class="form-grid">
+          <label class="field"><input id="name" required placeholder="نام و نام خانوادگی *"></label>
+          <label class="field"><input id="phone" required placeholder="شماره تماس *" inputmode="tel"></label>
+          <label class="field"><input id="company" placeholder="نام مجموعه / شرکت"></label>
+          <label class="field">
+            <select id="need" required>
+              <option value="">نوع نیاز * - انتخاب کنید</option>
+              <option>دریافت لیست قیمت</option><option>استعلام قیمت</option>
+              <option>مشاوره رایگان</option><option>بازدید از محل</option>
+              <option>دوربین و شبکه کارخانه</option><option>ارتقای سیستم قدیمی</option>
+              <option>عیب‌یابی و تعمیر</option><option>خرید و اجرای دوربین</option>
+            </select>
+          </label>
+          <label class="field full"><textarea id="note" placeholder="توضیحات بیشتر (اختیاری)"></textarea></label>
+        </div>
+        <button class="submit" type="submit">ثبت درخواست ✈</button>
+        <div class="form-note" id="status">پاسخگویی سریع • کمتر از ۳۰ دقیقه</div>
+      </form>
+    </section>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner wrap">
+    <div class="footer-item"><div class="footer-icon">☎</div><div><b>09134286813</b><br><small>برای مشاوره و ثبت درخواست</small></div></div>
+    <div class="footer-item"><div class="footer-icon">⌖</div><div><b>اصفهان</b><br><small>فعال در سراسر استان</small></div></div>
+    <div class="footer-brand"><img src="logo.png.jpg" alt="لوگو"><strong>دید گستر ملل پیشرو</strong><div class="slogan">امنیت شما اعتبار ماست</div></div>
+    <div class="brands"><span>HIKVISION</span><span>Dahua</span></div>
+  </div>
 </footer>
 
-</div>
-
 <script>
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxp47PYOMqLtRD0B7V5LA9xm9Uoc3_1yhQjs6EopFkIEs9lqLs2ipiCkZ8ptUjcX1Ro/exec";
+const EITAA="https://eitaa.com/melaldoorbin_app";
 
-function selectService(service){
-  document.getElementById('service').value = service;
-  document.getElementById('request').scrollIntoView({behavior:'smooth'});
+function selectNeed(need){
+  document.getElementById("need").value=need;
+  document.getElementById("request").scrollIntoView({behavior:"smooth",block:"center"});
+  document.getElementById("name").focus();
 }
 
-async function submitForm(){
-  const name=document.getElementById('name').value.trim();
-  const phone=document.getElementById('phone').value.trim();
-  const company=document.getElementById('company').value.trim();
-  const service=document.getElementById('service').value;
-  const note=document.getElementById('note').value.trim();
-  const status=document.getElementById('status');
-
-  if(!name || !phone || !service){
-    status.textContent='لطفاً نام، شماره تماس و نوع نیاز را وارد کنید.';
+async function submitForm(e){
+  e.preventDefault();
+  const status=document.getElementById("status");
+  const data={
+    name:document.getElementById("name").value.trim(),
+    phone:document.getElementById("phone").value.trim(),
+    company:document.getElementById("company").value.trim(),
+    need:document.getElementById("need").value,
+    note:document.getElementById("note").value.trim()
+  };
+  if(!data.name || !data.phone || !data.need){
+    status.textContent="لطفاً موارد ستاره‌دار را تکمیل کنید.";
     return;
   }
-
-  status.textContent='در حال ثبت درخواست...';
-
-  const data={name,phone,company,service,note};
-
-  try{
-    await fetch(SCRIPT_URL,{
-      method:'POST',
-      mode:'no-cors',
-      headers:{'Content-Type':'text/plain;charset=utf-8'},
-      body:JSON.stringify(data)
-    });
-    status.textContent='درخواست شما ثبت شد. کارشناسان ما با شما تماس می‌گیرند.';
-    document.getElementById('name').value='';
-    document.getElementById('phone').value='';
-    document.getElementById('company').value='';
-    document.getElementById('service').value='';
-    document.getElementById('note').value='';
-  }catch(e){
-    status.textContent='ثبت درخواست با مشکل مواجه شد؛ لطفاً از واتساپ یا ایتا پیام دهید.';
-  }
+  status.textContent="در حال ثبت درخواست...";
+  const msg=`سلام، برای دریافت خدمات شرکت دید گستر ملل درخواست دارم.%0Aنام: ${encodeURIComponent(data.name)}%0Aشماره: ${encodeURIComponent(data.phone)}%0Aمجموعه: ${encodeURIComponent(data.company)}%0Aنیاز: ${encodeURIComponent(data.need)}%0Aتوضیحات: ${encodeURIComponent(data.note)}`;
+  window.open("https://wa.me/989134286813?text="+msg,"_blank");
+  status.textContent="درخواست شما آماده ارسال شد.";
 }
 </script>
 </body>
