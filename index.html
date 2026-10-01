@@ -1,72 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>شرکت دید گستر ملل پیشرو | درخواست خدمات</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#f5f7fc;color:#17266b;font-family:Tahoma,Arial,sans-serif}
-.wrap{width:min(1180px,calc(100% - 18px));margin:auto}
-.hero{height:350px;position:relative;overflow:hidden;border-radius:0 0 25px 25px;background:#101c52}
-.hero>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.7)}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#101b55aa,#101b5570)}
-.hero-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:white}
-.logo{width:90px;height:90px;object-fit:contain;background:white;border-radius:20px;padding:8px;margin-bottom:15px}
-h1{font-size:clamp(27px,4vw,45px);margin:0 0 8px}.hero p{font-size:19px;margin:0 0 18px}.slogan{background:#8c35d6;padding:12px 30px;border-radius:30px;font-weight:bold}
-h2{text-align:center;font-size:32px;margin:28px 0 8px}.sub{text-align:center;color:#68708a;margin:0 0 25px}
-.services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.card{position:relative;overflow:hidden;background:white;border:2px solid transparent;border-radius:18px;box-shadow:0 7px 22px #182a6518;cursor:pointer}
-.card.selected{border-color:#20b866;box-shadow:0 0 0 3px #20b86620}
-.pic{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#e9edf6;flex:none}
-.pic img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
-.icon{position:absolute;right:14px;bottom:12px;width:52px;height:52px;border-radius:50%;border:4px solid white;background:#4b35c7;color:white;display:flex;align-items:center;justify-content:center;font-size:21px;z-index:5}
-.card.selected .icon{background:#20b866}.card.selected .icon span{display:none}.card.selected .icon:after{content:"✓";font-size:27px;font-weight:bold}
-.body{min-height:108px;padding:16px 15px 14px}.body h3{margin:0 0 7px;font-size:17px}.body p{margin:0;color:#7b8197;font-size:12px;line-height:1.8}
-.arrow{position:absolute;left:11px;bottom:11px;width:25px;height:25px;border-radius:50%;background:#f0f3fa;display:grid;place-items:center}
-.card.selected .arrow{background:#20b866;color:white}
-.bar{position:sticky;bottom:10px;z-index:10;background:#fffffff5;border:1px solid #e0e5f0;border-radius:15px;padding:12px 15px;margin:18px 0 30px;display:flex;justify-content:space-between;align-items:center;gap:12px;box-shadow:0 8px 25px #15234d22}
-button{border:0;border-radius:11px;padding:12px 25px;background:#5735c9;color:white;font-weight:bold;cursor:pointer;font-family:inherit}
-button:disabled{opacity:.45}
-.form{display:none;background:white;border-radius:18px;padding:22px;margin-bottom:35px;box-shadow:0 7px 22px #182a6518}.form.show{display:block}.form h2{margin-top:0}
-.tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}.tag{background:#e9f9f0;color:#159452;border-radius:20px;padding:6px 10px;font-size:12px;font-weight:bold}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}input,textarea{width:100%;padding:13px;border:1px solid #dce1ed;border-radius:11px;font:inherit}textarea{min-height:100px}.full{grid-column:1/-1}.submit{width:100%;background:#20b866}
-@media(max-width:900px){.services{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.hero{height:330px}.logo{width:78px;height:78px}.hero p{font-size:15px}.slogan{font-size:14px}.services{gap:10px}.pic{aspect-ratio:1.25/1}.pic img{width:100%;height:100%;object-fit:cover}.icon{width:44px;height:44px;right:9px;bottom:9px;border-width:3px}.body{min-height:100px;padding:16px 10px 12px}.body h3{font-size:14px}.body p{font-size:10px}.grid{grid-template-columns:1fr}.full{grid-column:auto}.bar{flex-direction:column;text-align:center}.bar button{width:100%}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>آیکن‌های خدمات | دید گستر ملل پیشرو</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+    .icon-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
-<header class="hero">
-<img class="bg" src="header-bg.jpg" alt="">
-<div class="hero-content">
-<img class="logo" src="logo.png.jpg" alt="دید گستر ملل">
-<h1>شرکت دید گستر ملل پیشرو</h1><p>تخصص ما، امنیت شماست</p>
-<div class="slogan">امنیت شما اعتبار ماست</div>
-</div></header>
-<main class="wrap">
-<h2>درخواست خدمات و مشاوره</h2>
-<p class="sub">یک یا چند خدمت مورد نیاز خود را انتخاب کنید.</p>
-<section class="services" id="services"></section>
-<div class="bar"><b id="count">هنوز خدمتی انتخاب نشده</b><button id="next" disabled>ادامه و ثبت درخواست ←</button></div>
-<section class="form" id="form"><h2>اطلاعات تماس</h2><div class="tags" id="tags"></div>
-<form id="lead"><div class="grid">
-<input id="name" required placeholder="نام و نام خانوادگی *"><input id="phone" required placeholder="شماره تماس *">
-<input id="company" class="full" placeholder="نام شرکت / مجموعه"><textarea id="note" class="full" placeholder="توضیحات بیشتر"></textarea>
-<button class="submit full">ثبت درخواست</button></div></form><p id="status"></p></section>
-</main>
-<script>
-const S=[
-["بازدید از محل","بازدید و بررسی رایگان مجموعه","service4.jpg","📍"],
-["مشاوره رایگان","ارائه راهکار متناسب با نیاز شما","service3.jpg","💬"],
-["استعلام قیمت","دریافت قیمت به‌روز تجهیزات","service2.jpg","📋"],
-["دریافت لیست قیمت","لیست کامل تجهیزات و برندها","service1.jpg","📄"],
-["دوربین و شبکه کارخانه","راهکار امنیتی برای مجموعه‌های صنعتی","service5.jpg","🏭"],
-["ارتقای سیستم قدیمی","تبدیل آنالوگ به تحت شبکه","service6.jpg","⬆️"],
-["عیب‌یابی و تعمیر","رفع مشکل و بازگشت به عملکرد","service7.jpg","🔧"],
-["خرید و اجرای دوربین","نصب حرفه‌ای و استاندارد","service8.jpg","📹"]];
-const selected=new Set(), box=document.getElementById("services");
-S.forEach((s,i)=>{let c=document.createElement("article");c.className="card";c.innerHTML=`<div class="pic"><img src="${s[2]}" alt="${s[0]}"><div class="icon"><span>${s[3]}</span></div></div><div class="body"><h3>${s[0]}</h3><p>${s[1]}</p></div><div class="arrow">›</div>`;c.onclick=()=>{selected.has(i)?(selected.delete(i),c.classList.remove("selected")):(selected.add(i),c.classList.add("selected"));update()};box.appendChild(c)});
-function update(){document.getElementById("count").textContent=selected.size?selected.size+" خدمت انتخاب شده":"هنوز خدمتی انتخاب نشده";document.getElementById("next").disabled=!selected.size}
-document.getElementById("next").onclick=()=>{let t=document.getElementById("tags");t.innerHTML=[...selected].map(i=>`<span class="tag">${S[i][0]}</span>`).join("");document.getElementById("form").classList.add("show");document.getElementById("form").scrollIntoView({behavior:"smooth"})};
-document.getElementById("lead").onsubmit=async e=>{e.preventDefault();let d={name:name.value,phone:phone.value,company:company.value,note:note.value,services:[...selected].map(i=>S[i][0]).join("، ")};status.textContent="در حال ثبت درخواست...";try{await fetch("https://script.google.com/macros/s/AKfycbxp47PYOMqLtRD0B7V5LA9xm9Uoc3_1yhQjs6EopFkIEs9lqLs2ipiCkZ8ptUjcX1Ro/exec",{method:"POST",mode:"no-cors",body:JSON.stringify(d)});status.textContent="درخواست شما با موفقیت ثبت شد ✓"}catch(x){status.textContent="خطا در ثبت درخواست؛ دوباره تلاش کنید."}};
-</script>
-</body></html>
+  <img
+    class="icon-image"
+    src="a_clean_modern_ui_style_graphic_layout_icon_set.png"
+    alt="آیکن‌های خدمات شرکت دید گستر ملل پیشرو"
+  >
+</body>
+</html>
