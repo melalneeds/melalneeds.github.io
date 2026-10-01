@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>درخواست خدمات | دید گستر ملل</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f4f1f5;color:#241528}
+:root{--p:#612067;--p2:#8b3d92;--ink:#241528;--muted:#756b78;--line:#eadfea}
+.wrap{max-width:760px;margin:auto;padding:15px}
+.hero{background:linear-gradient(145deg,#45104d,#6c2373 55%,#934297);color:#fff;border-radius:30px;padding:28px 20px 25px;box-shadow:0 18px 45px #4d155333;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:#ffffff10;left:-100px;top:-110px}
+.logo{width:105px;height:105px;object-fit:cover;border-radius:24px;background:#fff;display:block;margin:0 auto 15px;position:relative;z-index:1}
+.hero h1{font-size:25px;text-align:center;margin:0 0 10px;position:relative;z-index:1}
+.hero p{text-align:center;line-height:2;margin:0;color:#f8edf9;position:relative;z-index:1;font-size:14px}
+.badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:18px;position:relative;z-index:1}
+.badge{background:#ffffff18;border:1px solid #ffffff38;border-radius:99px;padding:7px 12px;font-size:12px}
+.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px;margin-top:14px;box-shadow:0 8px 25px #2d17330d}
+.title{font-weight:800;font-size:17px;margin-bottom:7px}.sub{color:var(--muted);font-size:12px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{border:1.5px solid var(--line);border-radius:17px;padding:14px;cursor:pointer;transition:.2s;line-height:1.7;background:#fff}
+.opt:hover{border-color:var(--p2);transform:translateY(-1px)}.opt input{accent-color:var(--p);margin-left:7px}
+input[type=text],input[type=tel],textarea{width:100%;border:1.5px solid var(--line);border-radius:15px;padding:14px;font:inherit;outline:0}textarea{min-height:95px;resize:vertical}input:focus,textarea:focus{border-color:var(--p2)}
+button{width:100%;border:0;border-radius:16px;padding:15px;font:inherit;font-weight:800;cursor:pointer;margin-top:10px}
+.primary{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;box-shadow:0 9px 20px #64206b2b}
+.whatsapp{background:#1caf59;color:#fff}.eitaa{background:#eee9f7;color:#54205b}.ghost{background:#f4f2f4;color:var(--ink)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}.step{background:#faf8fb;border-radius:15px;padding:12px 6px;font-size:12px;line-height:1.7}.num{width:28px;height:28px;border-radius:50%;background:#eee2f0;color:var(--p);display:flex;align-items:center;justify-content:center;margin:0 auto 6px;font-weight:800}
+.footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding:18px 5px}
+.hidden{display:none}.success{text-align:center}.check{font-size:48px}.summary{text-align:right;background:#faf8fb;border-radius:17px;padding:14px;line-height:2;margin:15px 0}.tag{display:inline-block;background:#eee3f1;color:#602367;border-radius:99px;padding:5px 9px;margin:3px;font-size:11px}
+.status{font-size:12px;color:#756b78;margin:8px 0}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.hero h1{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+<img class="logo" src="logo.png.jpg" alt="شرکت دید گستر ملل">
+<h1>نیاز امنیتی مجموعه‌تان را مشخص کنید</h1>
+<p>در کمتر از <b>۶۰ ثانیه</b> درخواست خود را ثبت کنید تا کارشناسان <b>دید گستر ملل</b> با شما تماس بگیرند.</p>
+<div class="badges"><span class="badge">مشاوره رایگان</span><span class="badge">بازدید از محل</span><span class="badge">استعلام قیمت</span></div>
+</section>
+
+<div class="card" id="formCard">
+<div class="title">🔐 به چه خدمتی نیاز دارید؟</div>
+<div class="sub">می‌توانید چند گزینه را هم‌زمان انتخاب کنید.</div>
+<div class="grid" id="services">
+<label class="opt"><input type="checkbox" value="بازدید از محل"> بازدید از محل</label>
+<label class="opt"><input type="checkbox" value="مشاوره رایگان"> مشاوره رایگان</label>
+<label class="opt"><input type="checkbox" value="استعلام قیمت"> استعلام قیمت</label>
+<label class="opt"><input type="checkbox" value="دریافت لیست قیمت"> دریافت لیست قیمت</label>
+<label class="opt"><input type="checkbox" value="خرید و اجرای دوربین"> خرید و اجرای دوربین</label>
+<label class="opt"><input type="checkbox" value="عیب‌یابی و تعمیر"> عیب‌یابی و تعمیر</label>
+<label class="opt"><input type="checkbox" value="ارتقای سیستم قدیمی"> ارتقای سیستم قدیمی</label>
+<label class="opt"><input type="checkbox" value="دوربین و شبکه کارخانه"> دوربین و شبکه کارخانه</label>
+</div>
+
+<div class="title" style="margin-top:24px">🏢 نوع مجموعه</div>
+<div class="grid">
+<label class="opt"><input type="radio" name="type" value="کارخانه / مجموعه صنعتی"> کارخانه / مجموعه صنعتی</label>
+<label class="opt"><input type="radio" name="type" value="شرکت / دفتر"> شرکت / دفتر</label>
+<label class="opt"><input type="radio" name="type" value="فروشگاه"> فروشگاه</label>
+<label class="opt"><input type="radio" name="type" value="ساختمان / مجتمع"> ساختمان / مجتمع</label>
+<label class="opt"><input type="radio" name="type" value="منزل"> منزل</label>
+<label class="opt"><input type="radio" name="type" value="سایر"> سایر</label>
+</div>
+
+<div class="title" style="margin-top:24px">📞 اطلاعات تماس</div>
+<input id="name" type="text" placeholder="نام و نام خانوادگی / نام مجموعه">
+<br><br>
+<input id="phone" type="tel" placeholder="شماره تماس">
+<br><br>
+<textarea id="note" placeholder="توضیحات اختیاری؛ مثلاً تعداد دوربین، مشکل فعلی، متراژ کارخانه یا نوع پروژه..."></textarea>
+
+<button class="primary" onclick="submitForm()">ثبت درخواست رایگان ←</button>
+<button class="whatsapp" onclick="quickWA()">💬 ارتباط مستقیم با کارشناس</button>
+<button class="eitaa" onclick="eitaa()">✈️ ورود به کانال ایتا</button>
+</div>
+
+<div class="card">
+<div class="title">چطور پیش می‌رویم؟</div>
+<div class="steps"><div class="step"><div class="num">۱</div>ثبت درخواست</div><div class="step"><div class="num">۲</div>تماس کارشناس</div><div class="step"><div class="num">۳</div>بازدید و ارائه راهکار</div></div>
+</div>
+
+<div class="card success hidden" id="success">
+<div class="check">✅</div><div class="title">درخواست شما ثبت شد</div>
+<p style="color:#756b78">اطلاعات شما برای پیگیری کارشناسان آماده شد.</p>
+<div class="summary" id="summary"></div>
+<div class="status" id="status"></div>
+<button class="whatsapp" onclick="sendWA()">ارسال درخواست به کارشناس واتساپ</button>
+<button class="eitaa" onclick="eitaa()">ورود به کانال ایتا</button>
+<button class="ghost" onclick="location.reload()">ثبت درخواست جدید</button>
+</div>
+
+<div class="footer">شرکت دید گستر ملل<br><b>«امنیت شما، اعتبار ماست»</b></div>
+</div>
+
+<script>
+const WA="989134286813";
+const EITAA="https://eitaa.com/melaldoorbin_app";
+const LEADS_API="https://script.google.com/macros/s/AKfycbxp47PYOMqLtRD0B7V5LA9xm9Uoc3_1yhQjs6EopFkIEs9lqLs2ipiCkZ8ptUjcX1Ro/exec";
+let msg="";
+function data(){
+ const services=[...document.querySelectorAll('#services input:checked')].map(x=>x.value);
+ return {services,type:document.querySelector('input[name=type]:checked')?.value||"انتخاب نشده",name:document.getElementById('name').value.trim()||"اعلام نشده",phone:document.getElementById('phone').value.trim()||"اعلام نشده",note:document.getElementById('note').value.trim()||"ندارد"};
+}
+function makeMsg(d){return `سلام، از طریق فرم نیازسنجی شرکت دید گستر ملل درخواست دارم.\n\nنام/مجموعه: ${d.name}\nشماره تماس: ${d.phone}\nنوع مجموعه: ${d.type}\nخدمات موردنیاز: ${d.services.join("، ")}\nتوضیحات: ${d.note}`;}
+async function saveLead(d){try{const r=await fetch(LEADS_API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({...d,source:"فرم نیازسنجی سایت"})});return r.ok}catch(e){return false}}
+async function submitForm(){
+ const d=data();
+ if(!d.services.length){alert("لطفاً حداقل یک خدمت را انتخاب کنید.");return}
+ if(d.type==="انتخاب نشده"){alert("لطفاً نوع مجموعه را انتخاب کنید.");return}
+ if(d.phone==="اعلام نشده"){alert("لطفاً شماره تماس خود را وارد کنید.");return}
+ msg=makeMsg(d);
+ document.getElementById('summary').innerHTML=`<b>نوع مجموعه:</b> ${d.type}<br><b>نام:</b> ${d.name}<br><b>شماره:</b> ${d.phone}<br><br>`+d.services.map(x=>`<span class="tag">${x}</span>`).join("");
+ document.getElementById('formCard').classList.add('hidden');document.getElementById('success').classList.remove('hidden');
+ const ok=await saveLead(d);document.getElementById('status').textContent=ok?"اطلاعات در سیستم پیگیری شرکت ثبت شد.":"درخواست آماده ارسال به کارشناس است.";
+}
+function sendWA(){window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank")}
+function quickWA(){window.open("https://wa.me/"+WA+"?text="+encodeURIComponent("سلام، برای دریافت مشاوره و خدمات دوربین مداربسته با شرکت دید گستر ملل در ارتباط هستم."),"_blank")}
+function eitaa(){window.open(EITAA,"_blank")}
+</script>
+</body>
+</html>
