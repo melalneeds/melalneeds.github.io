@@ -245,6 +245,91 @@ footer{
 .brands{text-align:left;font-size:20px;font-weight:900}
 .brands span{margin-right:12px}
 
+
+/* MULTI SERVICE SELECTION */
+.card.selected{
+  border:2px solid #20b85a;
+  box-shadow:0 8px 25px rgba(32,184,90,.20);
+  transform:translateY(-2px);
+}
+.card.selected .card-icon{
+  background:linear-gradient(145deg,#19b957,#0c9b43);
+}
+.card-icon .check{
+  display:none;
+  font-size:22px;
+  font-weight:900;
+  line-height:1;
+}
+.card.selected .card-icon .normal-icon{display:none}
+.card.selected .card-icon .check{display:block}
+.selection-bar{
+  margin:16px 0 0;
+  padding:12px 15px;
+  background:#fff;
+  border:1px solid #e0e6f4;
+  border-radius:14px;
+  box-shadow:0 5px 18px rgba(31,49,102,.07);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.selection-info{
+  color:#4e587d;
+  font-size:12px;
+  line-height:1.8;
+}
+.selection-info strong{color:#159447}
+.continue-btn{
+  border:0;
+  cursor:pointer;
+  color:#fff;
+  background:linear-gradient(90deg,#4e2abb,#7541df);
+  border-radius:10px;
+  padding:10px 18px;
+  font-weight:900;
+  white-space:nowrap;
+}
+.selected-summary{
+  min-height:43px;
+  height:auto;
+  padding:10px 13px;
+  border:1px solid #dce2ef;
+  border-radius:10px;
+  background:#fafbff;
+  color:#4f5b82;
+  line-height:1.9;
+  margin-bottom:10px;
+}
+.selected-summary b{color:#233b9b}
+.selected-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:5px;
+}
+.selected-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:4px 9px;
+  border-radius:20px;
+  background:#e9f9ef;
+  color:#128744;
+  font-size:11px;
+  font-weight:700;
+}
+@media(max-width:650px){
+  .selection-bar{
+    flex-direction:column;
+    align-items:stretch;
+    text-align:center;
+  }
+  .continue-btn{width:100%}
+  .selected-summary{font-size:11px}
+}
+
 /* MOBILE */
 @media(max-width:1050px){
   .hero-inner{grid-template-columns:1fr auto}
@@ -450,46 +535,54 @@ footer{
   <p class="section-sub">لطفاً نوع نیاز خود را انتخاب کنید تا کارشناسان ما در سریع‌ترین زمان با شما تماس بگیرند.</p>
 
   <section class="services">
-    <article class="card" onclick="selectNeed('دریافت لیست قیمت')">
-      <div class="card-photo"><img src="service1.jpg" alt="دریافت لیست قیمت"><div class="card-icon">▤</div></div>
+    <article class="card" data-need="دریافت لیست قیمت" onclick="toggleNeed(this)">
+      <div class="card-photo"><img src="service1.jpg" alt="دریافت لیست قیمت"><div class="card-icon"><span class="normal-icon">▤</span><span class="check">✓</span></div></div>
       <div class="card-body"><h3>دریافت لیست قیمت</h3><p>لیست کامل تجهیزات و برندها</p><span class="arrow">›</span></div>
     </article>
 
-    <article class="card" onclick="selectNeed('استعلام قیمت')">
-      <div class="card-photo"><img src="service2.jpg" alt="استعلام قیمت"><div class="card-icon">▱</div></div>
+    <article class="card" data-need="استعلام قیمت" onclick="toggleNeed(this)">
+      <div class="card-photo"><img src="service2.jpg" alt="استعلام قیمت"><div class="card-icon"><span class="normal-icon">▱</span><span class="check">✓</span></div></div>
       <div class="card-body"><h3>استعلام قیمت</h3><p>دریافت قیمت به‌روز تجهیزات</p><span class="arrow">›</span></div>
     </article>
 
-    <article class="card" onclick="selectNeed('مشاوره رایگان')">
-      <div class="card-photo"><img src="service3.jpg" alt="مشاوره رایگان"><div class="card-icon">☷</div></div>
+    <article class="card" data-need="مشاوره رایگان" onclick="toggleNeed(this)">
+      <div class="card-photo"><img src="service3.jpg" alt="مشاوره رایگان"><div class="card-icon"><span class="normal-icon">☷</span><span class="check">✓</span></div></div>
       <div class="card-body"><h3>مشاوره رایگان</h3><p>ارائه راهکار متناسب با نیاز شما</p><span class="arrow">›</span></div>
     </article>
 
-    <article class="card" onclick="selectNeed('بازدید از محل')">
-      <div class="card-photo"><img src="service4.jpg" alt="بازدید از محل"><div class="card-icon">●</div></div>
+    <article class="card" data-need="بازدید از محل" onclick="toggleNeed(this)">
+      <div class="card-photo"><img src="service4.jpg" alt="بازدید از محل"><div class="card-icon"><span class="normal-icon">●</span><span class="check">✓</span></div></div>
       <div class="card-body"><h3>بازدید از محل</h3><p>بازدید و بررسی رایگان مجموعه</p><span class="arrow">›</span></div>
     </article>
 
-    <article class="card" onclick="selectNeed('دوربین و شبکه کارخانه')">
-      <div class="card-photo"><img src="service5.jpg" alt="دوربین و شبکه کارخانه"><div class="card-icon">▥</div></div>
+    <article class="card" data-need="دوربین و شبکه کارخانه" onclick="toggleNeed(this)">
+      <div class="card-photo"><img src="service5.jpg" alt="دوربین و شبکه کارخانه"><div class="card-icon"><span class="normal-icon">▥</span><span class="check">✓</span></div></div>
       <div class="card-body"><h3>دوربین و شبکه کارخانه</h3><p>راهکار امنیتی برای مجموعه‌های صنعتی</p><span class="arrow">›</span></div>
     </article>
 
-    <article class="card" onclick="selectNeed('ارتقای سیستم قدیمی')">
-      <div class="card-photo"><img src="service6.jpg" alt="ارتقای سیستم قدیمی"><div class="card-icon">↗</div></div>
+    <article class="card" data-need="ارتقای سیستم قدیمی" onclick="toggleNeed(this)">
+      <div class="card-photo"><img src="service6.jpg" alt="ارتقای سیستم قدیمی"><div class="card-icon"><span class="normal-icon">↗</span><span class="check">✓</span></div></div>
       <div class="card-body"><h3>ارتقای سیستم قدیمی</h3><p>تبدیل آنالوگ به تحت شبکه</p><span class="arrow">›</span></div>
     </article>
 
-    <article class="card" onclick="selectNeed('عیب‌یابی و تعمیر')">
-      <div class="card-photo"><img src="service7.jpg" alt="عیب‌یابی و تعمیر"><div class="card-icon">⌕</div></div>
+    <article class="card" data-need="عیب‌یابی و تعمیر" onclick="toggleNeed(this)">
+      <div class="card-photo"><img src="service7.jpg" alt="عیب‌یابی و تعمیر"><div class="card-icon"><span class="normal-icon">⌕</span><span class="check">✓</span></div></div>
       <div class="card-body"><h3>عیب‌یابی و تعمیر</h3><p>رفع مشکل و بازگشت به عملکرد</p><span class="arrow">›</span></div>
     </article>
 
-    <article class="card" onclick="selectNeed('خرید و اجرای دوربین')">
-      <div class="card-photo"><img src="service8.jpg" alt="خرید و اجرای دوربین"><div class="card-icon">▣</div></div>
+    <article class="card" data-need="خرید و اجرای دوربین" onclick="toggleNeed(this)">
+      <div class="card-photo"><img src="service8.jpg" alt="خرید و اجرای دوربین"><div class="card-icon"><span class="normal-icon">▣</span><span class="check">✓</span></div></div>
       <div class="card-body"><h3>خرید و اجرای دوربین</h3><p>نصب و راه‌اندازی حرفه‌ای</p><span class="arrow">›</span></div>
     </article>
   </section>
+
+  <div class="selection-bar" id="selectionBar">
+    <div class="selection-info" id="selectionInfo">
+      هنوز خدمتی انتخاب نشده است.<br>
+      <strong>می‌توانید چند خدمت را همزمان انتخاب کنید.</strong>
+    </div>
+    <button type="button" class="continue-btn" onclick="goToRequest()">ادامه و ثبت درخواست ←</button>
+  </div>
 
   <section class="lower" id="request">
     <aside class="why">
@@ -514,18 +607,15 @@ footer{
           <label class="field"><input id="name" required placeholder="نام و نام خانوادگی *"></label>
           <label class="field"><input id="phone" required placeholder="شماره تماس *" inputmode="tel"></label>
           <label class="field"><input id="company" placeholder="نام مجموعه / شرکت"></label>
-          <label class="field">
-            <select id="need" required>
-              <option value="">نوع نیاز * - انتخاب کنید</option>
-              <option>دریافت لیست قیمت</option><option>استعلام قیمت</option>
-              <option>مشاوره رایگان</option><option>بازدید از محل</option>
-              <option>دوربین و شبکه کارخانه</option><option>ارتقای سیستم قدیمی</option>
-              <option>عیب‌یابی و تعمیر</option><option>خرید و اجرای دوربین</option>
-            </select>
-          </label>
+          <div class="selected-summary" id="selectedSummary">
+            <b>خدمات انتخاب‌شده:</b>
+            <div class="selected-tags" id="selectedTags">
+              <span style="color:#8992ad;font-size:11px">هنوز خدمتی انتخاب نشده است</span>
+            </div>
+          </div>
           <label class="field full"><textarea id="note" placeholder="توضیحات بیشتر (اختیاری)"></textarea></label>
         </div>
-        <button class="submit" type="submit">ثبت درخواست ✈</button>
+        <button class="submit" type="submit">ثبت درخواست و ارسال ✈</button>
         <div class="form-note" id="status">پاسخگویی سریع • کمتر از ۳۰ دقیقه</div>
       </form>
     </section>
@@ -543,30 +633,90 @@ footer{
 
 <script>
 const EITAA="https://eitaa.com/melaldoorbin_app";
+const selectedNeeds = new Set();
 
-function selectNeed(need){
-  document.getElementById("need").value=need;
-  document.getElementById("request").scrollIntoView({behavior:"smooth",block:"center"});
-  document.getElementById("name").focus();
+function toggleNeed(card){
+  const need = card.dataset.need;
+  if(selectedNeeds.has(need)){
+    selectedNeeds.delete(need);
+    card.classList.remove("selected");
+  }else{
+    selectedNeeds.add(need);
+    card.classList.add("selected");
+  }
+  updateSelectionUI();
+}
+
+function updateSelectionUI(){
+  const info = document.getElementById("selectionInfo");
+  const tags = document.getElementById("selectedTags");
+  const needs = Array.from(selectedNeeds);
+
+  if(needs.length === 0){
+    info.innerHTML = 'هنوز خدمتی انتخاب نشده است.<br><strong>می‌توانید چند خدمت را همزمان انتخاب کنید.</strong>';
+    tags.innerHTML = '<span style="color:#8992ad;font-size:11px">هنوز خدمتی انتخاب نشده است</span>';
+    return;
+  }
+
+  info.innerHTML = '<strong>'+needs.length+' خدمت انتخاب شده</strong><br>برای ادامه روی دکمه ثبت درخواست بزنید.';
+  tags.innerHTML = needs.map(n => '<span class="selected-tag">✓ '+escapeHtml(n)+'</span>').join('');
+}
+
+function goToRequest(){
+  if(selectedNeeds.size === 0){
+    alert("لطفاً حداقل یک خدمت را انتخاب کنید.");
+    return;
+  }
+  document.getElementById("request").scrollIntoView({behavior:"smooth",block:"start"});
+  setTimeout(()=>document.getElementById("name").focus(),500);
+}
+
+function escapeHtml(text){
+  const div=document.createElement("div");
+  div.textContent=text;
+  return div.innerHTML;
 }
 
 async function submitForm(e){
   e.preventDefault();
+
   const status=document.getElementById("status");
+  const needs=Array.from(selectedNeeds);
+
+  if(needs.length === 0){
+    alert("لطفاً حداقل یک خدمت را انتخاب کنید.");
+    document.getElementById("selectionBar").scrollIntoView({behavior:"smooth",block:"center"});
+    return;
+  }
+
   const data={
     name:document.getElementById("name").value.trim(),
     phone:document.getElementById("phone").value.trim(),
     company:document.getElementById("company").value.trim(),
-    need:document.getElementById("need").value,
+    needs:needs,
     note:document.getElementById("note").value.trim()
   };
-  if(!data.name || !data.phone || !data.need){
-    status.textContent="لطفاً موارد ستاره‌دار را تکمیل کنید.";
+
+  if(!data.name || !data.phone){
+    status.textContent="لطفاً نام و شماره تماس را وارد کنید.";
     return;
   }
-  status.textContent="در حال ثبت درخواست...";
-  const msg=`سلام، برای دریافت خدمات شرکت دید گستر ملل درخواست دارم.%0Aنام: ${encodeURIComponent(data.name)}%0Aشماره: ${encodeURIComponent(data.phone)}%0Aمجموعه: ${encodeURIComponent(data.company)}%0Aنیاز: ${encodeURIComponent(data.need)}%0Aتوضیحات: ${encodeURIComponent(data.note)}`;
-  window.open("https://wa.me/989134286813?text="+msg,"_blank");
+
+  status.textContent="در حال آماده‌سازی درخواست...";
+
+  const message =
+`سلام، برای دریافت خدمات شرکت دید گستر ملل درخواست دارم.
+نام: ${data.name}
+شماره تماس: ${data.phone}
+مجموعه: ${data.company || "-"}
+خدمات موردنیاز: ${needs.join("، ")}
+توضیحات: ${data.note || "-"}`;
+
+  window.open(
+    "https://wa.me/989134286813?text="+encodeURIComponent(message),
+    "_blank"
+  );
+
   status.textContent="درخواست شما آماده ارسال شد.";
 }
 </script>
