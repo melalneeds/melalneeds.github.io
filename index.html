@@ -64,9 +64,129 @@ footer{background:var(--navy);color:#fff;padding:27px 0}.footer-inner{display:fl
 @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.hero-side{display:none}.hero-inner{justify-content:center;text-align:center}.brand{justify-content:center}}
 @media(max-width:620px){
 .wrap{width:min(100% - 18px,520px)}.hero{margin-top:8px;border-radius:0 0 25px 25px;min-height:470px}.hero-inner{min-height:470px;padding:30px 20px;align-items:center}.hero p{font-size:15px}.logo{width:68px;height:68px}
-.grid{grid-template-columns:1fr 1fr;gap:10px}.pic{height:145px;background:#f1f2f7}.card{border-radius:18px}.card-body{padding:13px 11px}.card-title{font-size:14px}.card-desc{font-size:11px;min-height:43px}.card-foot{font-size:10px}.arrow{width:26px;height:26px}
+.grid{grid-template-columns:1fr;gap:14px}.pic{height:auto;aspect-ratio:16/9;background:#f1f2f7}.card{border-radius:18px}.card-body{padding:14px}.card-title{font-size:16px}.card-desc{font-size:12px;min-height:0}.card-foot{font-size:12px}.arrow{width:26px;height:26px}
 .section{padding-top:35px}.selection-actions{flex-direction:column}.selection-status,.continue-btn{width:100%;text-align:center}.panel{padding:18px;border-radius:22px}.form-top{display:block}.selected-box{display:inline-block;margin-top:12px}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.actions{flex-direction:column}.primary,.secondary{width:100%}.contact-links{flex-direction:column}.footer-inner{flex-direction:column;text-align:center}
 }
+
+@media(max-width:380px){
+  .wrap{width:calc(100% - 16px)}
+  .hero-inner{padding:26px 14px}
+  .hero{min-height:440px}
+  .hero-inner{min-height:440px}
+  .pic{aspect-ratio:16/9}
+  .card-title{font-size:15px}
+  .card-desc{font-size:11.5px}
+}
+
+/* FINAL MOBILE OVERRIDE */
+@media only screen and (max-width: 700px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .wrap {
+    width: calc(100% - 20px) !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero {
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 0 24px 24px !important;
+  }
+
+  .hero-inner {
+    width: 100% !important;
+    min-height: 430px !important;
+    padding: 28px 16px !important;
+  }
+
+  .section {
+    width: 100% !important;
+    padding-top: 30px !important;
+  }
+
+  .grid {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    transform: none !important;
+  }
+
+  .pic {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    overflow: hidden !important;
+    background: #f1f2f7 !important;
+  }
+
+  .pic img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  .card-body {
+    width: 100% !important;
+    padding: 14px !important;
+  }
+
+  .card-title {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+  }
+
+  .card-desc {
+    min-height: 0 !important;
+    font-size: 12px !important;
+    line-height: 1.8 !important;
+  }
+
+  .card-foot {
+    font-size: 12px !important;
+  }
+
+  .selection-actions,
+  .form-section {
+    width: 100% !important;
+  }
+
+  .panel {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .wrap {
+    width: calc(100% - 14px) !important;
+  }
+
+  .hero-inner {
+    padding: 24px 12px !important;
+  }
+
+  .pic {
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  .card-body {
+    padding: 12px !important;
+  }
+}
+
 </style>
 </head>
 <body>
