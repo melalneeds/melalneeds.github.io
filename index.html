@@ -4,65 +4,575 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>شرکت دید گستر ملل | درخواست خدمات و مشاوره</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
-:root{--navy:#07133f;--blue:#253aa9;--purple:#64206b;--violet:#7434c4;--line:#dfe4f2;--muted:#68708a}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f9fd;color:#17204b;font-family:Vazirmatn,Tahoma,sans-serif}.wrap{max-width:1220px;margin:auto;padding:0 14px 28px}
+
+:root{
+  --navy:#07133f;
+  --blue:#253aa9;
+  --purple:#64206b;
+  --violet:#7434c4;
+  --line:#dfe4f2;
+  --muted:#68708a
+}
+
+*{
+  box-sizing:border-box
+}
+
+html{
+  scroll-behavior:smooth
+}
+
+body{
+  margin:0;
+  background:#f7f9fd;
+  color:#17204b;
+  font-family:Vazirmatn,Tahoma,sans-serif
+}
+
+.wrap{
+  max-width:1220px;
+  margin:auto;
+  padding:0 14px 28px
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
 .hero{
-  border-radius:0 0 22px 22px;
+  width:100%;
+  margin:0;
+  padding:0;
   overflow:hidden;
   position:relative;
   background:#fff;
+  border-radius:0 0 22px 22px;
   box-shadow:0 8px 25px #07133f22;
-  line-height:0
-}
-.header {
-    overflow: hidden;
+  line-height:0;
 }
 
-.header img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: fill;
-}
+.hero-img{
   display:block;
+  width:100%;
+  height:auto;
+  max-width:100%;
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+
+/* =========================
+   TITLE
+   ========================= */
+
+.service-title-main{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  justify-content:center;
+  margin:27px 0 4px;
+  color:#2738a4
+}
+
+.service-title-main:before,
+.service-title-main:after{
+  content:'';
+  height:2px;
+  background:#303fae;
+  flex:1;
+  max-width:270px
+}
+
+.service-title-main h2{
+  margin:0;
+  font-size:27px;
+  font-weight:900
+}
+
+.lead{
+  text-align:center;
+  margin:0 0 22px;
+  font-size:13px;
+  color:#26345f;
+  font-weight:500
+}
+
+
+/* =========================
+   SERVICE CARDS
+   ========================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px
+}
+
+.card{
+  background:#fff;
+  border:1px solid #e2e7f1;
+  border-radius:17px;
+  overflow:hidden;
+  box-shadow:0 7px 18px #26356b13;
+  cursor:pointer;
+  transition:.2s;
+  position:relative
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 13px 25px #26356b22
+}
+
+.card input{
+  display:none
+}
+
+.photo{
+  height:132px;
+  position:relative;
+  overflow:hidden
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block
+}
+
+.card-body{
+  padding:23px 15px 13px
+}
+
+.card h3{
+  font-size:14px;
+  margin:0 0 5px;
+  color:#172b8b;
+  font-weight:900
+}
+
+.card p{
+  font-size:10.5px;
+  color:#59627d;
+  margin:0;
+  line-height:1.9
+}
+
+.arrow{
+  position:absolute;
+  left:13px;
+  bottom:13px;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#eef1ff;
+  color:#3344ad;
+  display:grid;
+  place-items:center;
+  font-weight:900
+}
+
+.card:has(input:checked){
+  border:2px solid #6230bd;
+  box-shadow:0 12px 27px #6031bd2e;
+  transform:translateY(-3px)
+}
+
+.tick{
+  display:none;
+  position:absolute;
+  left:10px;
+  top:10px;
+  width:27px;
+  height:27px;
+  border-radius:50%;
+  background:#20a45a;
+  color:#fff;
+  place-items:center;
+  font-weight:900;
+  z-index:3
+}
+
+.card:has(input:checked) .tick{
+  display:grid
+}
+
+
+/* =========================
+   LOWER SECTION
+   ========================= */
+
+.lower{
+  display:grid;
+  grid-template-columns:33% 67%;
+  gap:0;
+  margin-top:20px;
+  border-radius:17px;
+  overflow:hidden;
+  box-shadow:0 8px 25px #25345b16
+}
+
+.why{
+  background:linear-gradient(145deg,#273aa7,#242e8c);
+  color:#fff;
+  padding:28px 25px
+}
+
+.why h3{
+  margin:0 0 17px;
+  font-size:20px
+}
+
+.why ul{
+  list-style:none;
   margin:0;
   padding:0
-  @media (max-width: 768px) {
-    .header {
-        height: auto !important;
-        overflow: hidden;
-    }
+}
 
-    .header img {
-        width: 100% !important;
-        height: auto !important;
-        object-fit: contain !important;
-        display: block;
-    }
+.why li{
+  font-size:12px;
+  line-height:2.2;
+  margin:5px 0
 }
+
+.why li:before{
+  content:'✓';
+  font-weight:900;
+  margin-left:8px
 }
-.service-title-main{display:flex;align-items:center;gap:22px;justify-content:center;margin:27px 0 4px;color:#2738a4}.service-title-main:before,.service-title-main:after{content:"";height:2px;background:#303fae;flex:1;max-width:270px}.service-title-main h2{margin:0;font-size:27px;font-weight:900}.lead{text-align:center;margin:0 0 22px;font-size:13px;color:#26345f;font-weight:500}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.card{background:#fff;border:1px solid #e2e7f1;border-radius:17px;overflow:hidden;box-shadow:0 7px 18px #26356b13;cursor:pointer;transition:.2s;position:relative}.card:hover{transform:translateY(-3px);box-shadow:0 13px 25px #26356b22}.card input{display:none}.photo{height:132px;position:relative;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover;display:block}.card-body{padding:23px 15px 13px}.card h3{font-size:14px;margin:0 0 5px;color:#172b8b;font-weight:900}.card p{font-size:10.5px;color:#59627d;margin:0;line-height:1.9}.arrow{position:absolute;left:13px;bottom:13px;width:20px;height:20px;border-radius:50%;background:#eef1ff;color:#3344ad;display:grid;place-items:center;font-weight:900}.card:has(input:checked){border:2px solid #6230bd;box-shadow:0 12px 27px #6031bd2e;transform:translateY(-3px)}.tick{display:none;position:absolute;left:10px;top:10px;width:27px;height:27px;border-radius:50%;background:#20a45a;color:#fff;place-items:center;font-weight:900;z-index:3}.card:has(input:checked) .tick{display:grid}
-.lower{display:grid;grid-template-columns:33% 67%;gap:0;margin-top:20px;border-radius:17px;overflow:hidden;box-shadow:0 8px 25px #25345b16}.why{background:linear-gradient(145deg,#273aa7,#242e8c);color:#fff;padding:28px 25px}.why h3{margin:0 0 17px;font-size:20px}.why ul{list-style:none;margin:0;padding:0}.why li{font-size:12px;line-height:2.2;margin:5px 0}.why li:before{content:'✓';font-weight:900;margin-left:8px}.contact{background:#f4f7fd;padding:22px 28px}.contact h3{margin:0 0 14px;font-size:20px;color:#182a82}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{position:relative}.field input,.field select,.field textarea{width:100%;border:1px solid #d6deef;background:#fff;border-radius:10px;padding:12px 14px;font-family:inherit;font-size:11.5px;color:#26345d;outline:0}.field textarea{height:67px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:#6641c7;box-shadow:0 0 0 3px #6a42c711}.full{grid-column:1/-1}.submit{border:0;width:60%;margin-top:10px;border-radius:10px;padding:13px;background:linear-gradient(90deg,#5030b5,#7541d2);color:#fff;font:800 13px Vazirmatn;cursor:pointer}.quick{display:flex;gap:9px;margin-top:10px}.quick a{flex:1;text-decoration:none;text-align:center;color:#fff;border-radius:25px;padding:10px;font-size:11px;font-weight:800}.wa{background:#18ad59}.eitaa{background:#f2831d}.channel{background:#2496dd}.status{font-size:11px;margin-top:9px;color:#18723d;min-height:18px}
-.footer{margin-top:0;background:linear-gradient(90deg,#061038,#0b1644);color:#fff;padding:24px 35px;display:flex;align-items:center;justify-content:space-between;gap:20px}.footer .item{font-size:11px;line-height:2}.footer strong{font-size:18px}.footer-logo{width:82px;height:82px;object-fit:contain}.brand-logos{font-weight:900;font-size:18px;letter-spacing:.5px}.brand-logos span+span{margin-right:25px}
-@media(max-width:900px).hero{height:205px}.hero-inner{padding:18px}.hero-copy{margin-right:120px;min-width:330px}.hero-logo{right:135px;width:85px;height:85px}.grid{grid-template-columns:repeat(2,1fr)}.lower{grid-template-columns:1fr}.why{padding:22px}.footer{flex-wrap:wrap}.submit{width:100%}}
-@media(max-width:560px){.wrap{padding:0 8px 18px}.hero{height:205px}.hero-inner{justify-content:center}.hero-copy{margin:0;min-width:0;width:100%;padding-top:75px}.hero h1{font-size:23px}.hero .sub{font-size:13px}.badge{padding:8px 24px;font-size:11px}.hero-logo{right:12px;top:10px;width:58px;height:58px}.service-title-main{gap:8px}.service-title-main h2{font-size:21px}.service-title-main:before,.service-title-main:after{max-width:75px}.lead{font-size:11px}.grid{gap:8px}.photo{height:112px}.card-body{padding:22px 10px 12px}.card h3{font-size:11px}.card p{font-size:9px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.contact{padding:18px 14px}.footer{padding:18px 15px;justify-content:center;text-align:center}.footer .item{min-width:120px}}
+
+.contact{
+  background:#f4f7fd;
+  padding:22px 28px
+}
+
+.contact h3{
+  margin:0 0 14px;
+  font-size:20px;
+  color:#182a82
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px
+}
+
+.field{
+  position:relative
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  border:1px solid #d6deef;
+  background:#fff;
+  border-radius:10px;
+  padding:12px 14px;
+  font-family:inherit;
+  font-size:11.5px;
+  color:#26345d;
+  outline:0
+}
+
+.field textarea{
+  height:67px;
+  resize:vertical
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:#6641c7;
+  box-shadow:0 0 0 3px #6a42c711
+}
+
+.full{
+  grid-column:1/-1
+}
+
+.submit{
+  border:0;
+  width:60%;
+  margin-top:10px;
+  border-radius:10px;
+  padding:13px;
+  background:linear-gradient(90deg,#5030b5,#7541d2);
+  color:#fff;
+  font:800 13px Vazirmatn;
+  cursor:pointer
+}
+
+.quick{
+  display:flex;
+  gap:9px;
+  margin-top:10px
+}
+
+.quick a{
+  flex:1;
+  text-decoration:none;
+  text-align:center;
+  color:#fff;
+  border-radius:25px;
+  padding:10px;
+  font-size:11px;
+  font-weight:800
+}
+
+.wa{
+  background:#18ad59
+}
+
+.eitaa{
+  background:#f2831d
+}
+
+.channel{
+  background:#2496dd
+}
+
+.status{
+  font-size:11px;
+  margin-top:9px;
+  color:#18723d;
+  min-height:18px
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer{
+  margin-top:0;
+  background:linear-gradient(90deg,#061038,#0b1644);
+  color:#fff;
+  padding:24px 35px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px
+}
+
+.footer .item{
+  font-size:11px;
+  line-height:2
+}
+
+.footer strong{
+  font-size:18px
+}
+
+.footer-logo{
+  width:82px;
+  height:82px;
+  object-fit:contain
+}
+
+.brand-logos{
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:.5px
+}
+
+.brand-logos span+span{
+  margin-right:25px
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media(max-width:900px){
+
+  .grid{
+    grid-template-columns:repeat(2,1fr)
+  }
+
+  .lower{
+    grid-template-columns:1fr
+  }
+
+  .why{
+    padding:22px
+  }
+
+  .footer{
+    flex-wrap:wrap
+  }
+
+  .submit{
+    width:100%
+  }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:560px){
+
+  .wrap{
+    padding:0 8px 18px
+  }
+
+  /*
+     مهم:
+     برای هدر هیچ height ثابتی نداریم.
+     تصویر با نسبت واقعی خودش نمایش داده می‌شود.
+  */
+
+  .hero{
+    height:auto;
+    min-height:0;
+    border-radius:0 0 16px 16px
+  }
+
+  .hero-img{
+    width:100%;
+    height:auto;
+    object-fit:contain
+  }
+
+  .service-title-main{
+    gap:8px
+  }
+
+  .service-title-main h2{
+    font-size:21px
+  }
+
+  .service-title-main:before,
+  .service-title-main:after{
+    max-width:75px
+  }
+
+  .lead{
+    font-size:11px
+  }
+
+  .grid{
+    gap:8px
+  }
+
+  .photo{
+    height:112px
+  }
+
+  .card-body{
+    padding:22px 10px 12px
+  }
+
+  .card h3{
+    font-size:11px
+  }
+
+  .card p{
+    font-size:9px
+  }
+
+  .form-grid{
+    grid-template-columns:1fr
+  }
+
+  .full{
+    grid-column:auto
+  }
+
+  .contact{
+    padding:18px 14px
+  }
+
+  .footer{
+    padding:18px 15px;
+    justify-content:center;
+    text-align:center
+  }
+
+  .footer .item{
+    min-width:120px
+  }
+
+  .footer-logo{
+    width:70px;
+    height:70px
+  }
+
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+   ========================= */
+
+@media(max-width:380px){
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+    gap:6px
+  }
+
+  .photo{
+    height:100px
+  }
+
+  .card-body{
+    padding:18px 8px 10px
+  }
+
+  .card h3{
+    font-size:10px
+  }
+
+  .card p{
+    font-size:8.5px
+  }
+
+}
+
 </style>
 </head>
+
+
 <body>
+
 <div class="wrap">
+
 <section class="hero">
-<img class="hero-img" src="header-bg.jpg" alt="دید گستر ملل">
+  <img
+    class="hero-img"
+    src="header-bg.jpg"
+    alt="دید گستر ملل"
+  >
 </section>
-<div class="service-title-main"><h2>درخواست خدمات و مشاوره</h2></div>
-<p class="lead">لطفاً نوع نیاز خود را انتخاب کنید تا کارشناسان ما در سریع‌ترین زمان با شما تماس بگیرند.</p>
+
+
+<div class="service-title-main">
+  <h2>درخواست خدمات و مشاوره</h2>
+</div>
+
+<p class="lead">
+لطفاً نوع نیاز خود را انتخاب کنید تا کارشناسان ما در سریع‌ترین زمان با شما تماس بگیرند.
+</p>
+
 
 <div class="grid">
+
 <script>
+
 const services=[
 ['بازدید از محل','بازدید و بررسی رایگان مجموعه','service1.jpg'],
 ['مشاوره رایگان','ارائه راهکار متناسب با نیاز شما','service2.jpg'],
@@ -74,53 +584,270 @@ const services=[
 ['خرید و اجرای دوربین','نصب حرفه‌ای و استاندارد','service8.jpg']
 ];
 
+document.write(
+  services.map((s,i)=>`
+    <label class="card">
 
+      <input
+        type="checkbox"
+        name="services"
+        value="${s[0]}"
+      >
 
-document.write(services.map((s,i)=>`<label class="card"><input type="checkbox" name="services" value="${s[0]}"><span class="tick">✓</span><div class="photo"><img src="${s[2]}" alt="${s[0]}"></div><div class="card-body"><h3>${s[0]}</h3><p>${s[1]}</p></div><span class="arrow">‹</span></label>`).join(''));
+      <span class="tick">✓</span>
+
+      <div class="photo">
+        <img src="${s[2]}" alt="${s[0]}">
+      </div>
+
+      <div class="card-body">
+        <h3>${s[0]}</h3>
+        <p>${s[1]}</p>
+      </div>
+
+      <span class="arrow">‹</span>
+
+    </label>
+  `).join('')
+);
+
 </script>
+
 </div>
+
 
 <section class="lower">
-<aside class="why"><h3>چرا دید گستر ملل؟</h3><ul><li>تجربه و تخصص در پروژه‌های صنعتی</li><li>استفاده از تجهیزات اصلی و برندهای معتبر</li><li>پشتیبانی و خدمات پس از فروش</li><li>قیمت مناسب و مشاوره تخصصی</li></ul></aside>
+
+<aside class="why">
+
+<h3>چرا دید گستر ملل؟</h3>
+
+<ul>
+<li>تجربه و تخصص در پروژه‌های صنعتی</li>
+<li>استفاده از تجهیزات اصلی و برندهای معتبر</li>
+<li>پشتیبانی و خدمات پس از فروش</li>
+<li>قیمت مناسب و مشاوره تخصصی</li>
+</ul>
+
+</aside>
+
+
 <div class="contact">
+
 <h3>اطلاعات خود را وارد کنید</h3>
+
 <div class="form-grid">
-<div class="field"><input id="name" placeholder="نام و نام خانوادگی *"></div>
-<div class="field"><input id="phone" inputmode="tel" placeholder="شماره تماس *"></div>
-<div class="field"><input id="company" placeholder="نام مجموعه / شرکت"></div>
-<div class="field"><select id="type"><option value="">نوع نیاز / مجموعه را انتخاب کنید *</option><option>کارخانه / مجموعه صنعتی</option><option>شرکت</option><option>فروشگاه</option><option>ساختمان / مجتمع</option><option>منزل</option><option>سایر</option></select></div>
-<div class="field full"><textarea id="note" placeholder="توضیحات بیشتر (اختیاری)"></textarea></div>
+
+<div class="field">
+<input id="name" placeholder="نام و نام خانوادگی *">
 </div>
-<button class="submit" onclick="submitForm()">ثبت درخواست ✈</button>
+
+<div class="field">
+<input id="phone" inputmode="tel" placeholder="شماره تماس *">
+</div>
+
+<div class="field">
+<input id="company" placeholder="نام مجموعه / شرکت">
+</div>
+
+<div class="field">
+
+<select id="type">
+
+<option value="">
+نوع نیاز / مجموعه را انتخاب کنید *
+</option>
+
+<option>کارخانه / مجموعه صنعتی</option>
+<option>شرکت</option>
+<option>فروشگاه</option>
+<option>ساختمان / مجتمع</option>
+<option>منزل</option>
+<option>سایر</option>
+
+</select>
+
+</div>
+
+<div class="field full">
+
+<textarea
+id="note"
+placeholder="توضیحات بیشتر (اختیاری)"
+></textarea>
+
+</div>
+
+</div>
+
+
+<button
+class="submit"
+onclick="submitForm()"
+>
+ثبت درخواست ✈
+</button>
+
 <div id="status" class="status"></div>
-<div class="quick"><a class="wa" target="_blank" href="https://wa.me/989134286813">واتساپ</a><a class="eitaa" target="_blank" href="https://eitaa.com/melaldoorbin_app">ایتا</a><a class="channel" target="_blank" href="https://eitaa.com/melaldoorbin_app">کانال ایتا</a></div>
+
+
+<div class="quick">
+
+<a
+class="wa"
+target="_blank"
+href="https://wa.me/989134286813"
+>
+واتساپ
+</a>
+
+<a
+class="eitaa"
+target="_blank"
+href="https://eitaa.com/melaldoorbin_app"
+>
+ایتا
+</a>
+
+<a
+class="channel"
+target="_blank"
+href="https://eitaa.com/melaldoorbin_app"
+>
+کانال ایتا
+</a>
+
 </div>
+
+</div>
+
 </section>
 
+
 <footer class="footer">
-<div class="item"><strong>09134286813</strong><br>برای مشاوره و ثبت درخواست</div>
-<div class="item">اصفهان<br>فعال در سراسر استان</div>
-<img class="footer-logo" src="logo.png.jpg" alt="دید گستر ملل">
-<div class="item"><strong>امنیت شما اعتبار ماست</strong></div>
-<div class="brand-logos"><span>دید گستر ملل پیشرو</span></div>
-</footer>
+
+<div class="item">
+<strong>09134286813</strong>
+<br>
+برای مشاوره و ثبت درخواست
 </div>
 
+<div class="item">
+اصفهان
+<br>
+فعال در سراسر استان
+</div>
+
+<img
+class="footer-logo"
+src="logo.png.jpg"
+alt="دید گستر ملل"
+>
+
+<div class="item">
+<strong>امنیت شما اعتبار ماست</strong>
+</div>
+
+<div class="brand-logos">
+<span>دید گستر ملل پیشرو</span>
+</div>
+
+</footer>
+
+</div>
+
+
 <script>
+
 const API_URL='https://script.google.com/macros/s/AKfycbxp47PYOMqLtRD0B7V5LA9xm9Uoc3_1yhQjs6EopFkIEs9lqLs2ipiCkZ8ptUjcX1Ro/exec';
-function getServices(){return [...document.querySelectorAll('input[name="services"]:checked')].map(x=>x.value)}
-async function submitForm(){
-const services=getServices(), name=document.getElementById('name').value.trim(), phone=document.getElementById('phone').value.trim(), company=document.getElementById('company').value.trim(), type=document.getElementById('type').value, note=document.getElementById('note').value.trim(), status=document.getElementById('status');
-if(!services.length)return alert('لطفاً حداقل یک خدمت را انتخاب کنید.');
-if(!name)return alert('لطفاً نام خود را وارد کنید.');
-if(!phone)return alert('لطفاً شماره تماس خود را وارد کنید.');
-if(!type)return alert('لطفاً نوع مجموعه را انتخاب کنید.');
-status.textContent='در حال ثبت درخواست...';
-try{
-await fetch(API_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({name,phone,company,type,note,services:services.join('، '),source:'melalneeds.github.io'})});
-status.textContent='✅ درخواست شما ثبت شد. کارشناسان ما به‌زودی با شما تماس می‌گیرند.';
-}catch(e){status.textContent='ارسال مستقیم انجام نشد؛ لطفاً از واتساپ با ما تماس بگیرید.'}
+
+function getServices(){
+
+  return [
+    ...document.querySelectorAll(
+      'input[name="services"]:checked'
+    )
+  ].map(x=>x.value);
+
 }
+
+
+async function submitForm(){
+
+  const services=getServices();
+
+  const name=
+    document.getElementById('name').value.trim();
+
+  const phone=
+    document.getElementById('phone').value.trim();
+
+  const company=
+    document.getElementById('company').value.trim();
+
+  const type=
+    document.getElementById('type').value;
+
+  const note=
+    document.getElementById('note').value.trim();
+
+  const status=
+    document.getElementById('status');
+
+
+  if(!services.length)
+    return alert('لطفاً حداقل یک خدمت را انتخاب کنید.');
+
+  if(!name)
+    return alert('لطفاً نام خود را وارد کنید.');
+
+  if(!phone)
+    return alert('لطفاً شماره تماس خود را وارد کنید.');
+
+  if(!type)
+    return alert('لطفاً نوع مجموعه را انتخاب کنید.');
+
+
+  status.textContent='در حال ثبت درخواست...';
+
+
+  try{
+
+    await fetch(API_URL,{
+      method:'POST',
+      mode:'no-cors',
+      headers:{
+        'Content-Type':
+        'text/plain;charset=utf-8'
+      },
+
+      body:JSON.stringify({
+        name,
+        phone,
+        company,
+        type,
+        note,
+        services:services.join('، '),
+        source:'melalneeds.github.io'
+      })
+
+    });
+
+
+    status.textContent=
+    '✅ درخواست شما ثبت شد. کارشناسان ما به‌زودی با شما تماس می‌گیرند.';
+
+
+  }catch(e){
+
+    status.textContent=
+    'ارسال مستقیم انجام نشد؛ لطفاً از واتساپ با ما تماس بگیرید.';
+
+  }
+
+}
+
 </script>
+
 </body>
 </html>
