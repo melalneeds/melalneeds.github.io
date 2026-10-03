@@ -357,11 +357,11 @@ body{
   margin-top:0;
   background:linear-gradient(90deg,#061038,#0b1644);
   color:#fff;
-  padding:22px 35px;
+  padding:24px 35px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:25px;
+  gap:20px;
   border-radius:0 0 17px 17px;
   direction:rtl;
 }
@@ -370,73 +370,87 @@ body{
   font-size:11px;
   line-height:2;
   text-align:center;
-  white-space:nowrap;
 }
 
 .footer .item strong{
-  display:inline-block;
-  font-size:17px;
-  margin-bottom:2px;
+  font-size:18px;
 }
 
 .footer-logo{
-  width:75px;
-  height:75px;
+  width:82px;
+  height:82px;
   object-fit:contain;
   flex-shrink:0;
 }
 
 .brand-logos{
   font-weight:900;
-  font-size:17px;
-  letter-spacing:.2px;
-  white-space:nowrap;
+  font-size:18px;
+  letter-spacing:.5px;
   text-align:center;
+  white-space:nowrap;
 }
 
-.brand-logos span{
-  display:block;
+.brand-logos span+span{
+  margin-right:25px;
 }
 
 
-/* موبایل */
+/* =========================
+   MOBILE FOOTER
+   ========================= */
+
 @media(max-width:560px){
 
   .footer{
-    padding:20px 12px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px 8px;
-    justify-items:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:22px 15px;
     text-align:center;
   }
 
   .footer-logo{
-    width:65px;
-    height:65px;
-    grid-column:1 / -1;
-    grid-row:1;
+    order:1;
+    width:72px;
+    height:72px;
+    margin-bottom:4px;
+  }
+
+  .footer .item:nth-child(1){
+    order:2;
+  }
+
+  .footer .item:nth-child(2){
+    order:3;
+  }
+
+  .footer .item:nth-child(4){
+    order:4;
+  }
+
+  .brand-logos{
+    order:5;
+    white-space:normal;
+    font-size:15px;
+    margin-top:3px;
   }
 
   .footer .item{
-    min-width:0;
     width:100%;
-    font-size:10px;
-    white-space:normal;
+    min-width:0;
+    font-size:10.5px;
+    line-height:1.9;
+    text-align:center;
   }
 
   .footer .item strong{
     font-size:15px;
   }
 
-  .brand-logos{
-    grid-column:1 / -1;
-    font-size:15px;
-  }
-
 }
-
-
 /* =========================
    TABLET
    ========================= */
