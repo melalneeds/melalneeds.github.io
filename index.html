@@ -35,7 +35,7 @@ h2{font-size:clamp(25px,4vw,36px);margin:7px 0;color:var(--text)}.section-head p
 .card{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;cursor:pointer;box-shadow:0 8px 25px rgba(25,31,80,.06);transition:.2s;min-width:0}
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
 .card.selected{border:2px solid var(--green);box-shadow:0 12px 35px rgba(32,184,102,.16)}
-.pic{height:175px;position:relative;overflow:hidden;background:#f1f2f7;display:flex;align-items:center;justify-content:center}.pic img{width:100%;height:100%;display:block;object-fit:contain;object-position:center}
+.pic{height:175px;position:relative;overflow:hidden;background:#e9ebf5}.pic img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
 .card.selected .pic:after{content:"✓";position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:21px;font-weight:800;border:3px solid #fff}
 .card-body{padding:17px 17px 18px}.card-title{font-size:17px;font-weight:800;margin-bottom:7px}.card-desc{font-size:12.5px;color:var(--muted);line-height:1.9;min-height:45px}
 .card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:11px;color:var(--purple);font-size:12px;font-weight:700}
@@ -64,154 +64,9 @@ footer{background:var(--navy);color:#fff;padding:27px 0}.footer-inner{display:fl
 @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.hero-side{display:none}.hero-inner{justify-content:center;text-align:center}.brand{justify-content:center}}
 @media(max-width:620px){
 .wrap{width:min(100% - 18px,520px)}.hero{margin-top:8px;border-radius:0 0 25px 25px;min-height:470px}.hero-inner{min-height:470px;padding:30px 20px;align-items:center}.hero p{font-size:15px}.logo{width:68px;height:68px}
-.grid{grid-template-columns:1fr;gap:14px}.pic{height:auto;aspect-ratio:16/9;background:#f1f2f7}.card{border-radius:18px}.card-body{padding:14px}.card-title{font-size:16px}.card-desc{font-size:12px;min-height:0}.card-foot{font-size:12px}.arrow{width:26px;height:26px}
+.grid{grid-template-columns:1fr 1fr;gap:10px}.pic{height:145px}.card{border-radius:18px}.card-body{padding:13px 11px}.card-title{font-size:14px}.card-desc{font-size:11px;min-height:43px}.card-foot{font-size:10px}.arrow{width:26px;height:26px}
 .section{padding-top:35px}.selection-actions{flex-direction:column}.selection-status,.continue-btn{width:100%;text-align:center}.panel{padding:18px;border-radius:22px}.form-top{display:block}.selected-box{display:inline-block;margin-top:12px}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.actions{flex-direction:column}.primary,.secondary{width:100%}.contact-links{flex-direction:column}.footer-inner{flex-direction:column;text-align:center}
 }
-
-@media(max-width:380px){
-  .wrap{width:calc(100% - 16px)}
-  .hero-inner{padding:26px 14px}
-  .hero{min-height:440px}
-  .hero-inner{min-height:440px}
-  .pic{aspect-ratio:16/9}
-  .card-title{font-size:15px}
-  .card-desc{font-size:11.5px}
-}
-
-/* FINAL MOBILE OVERRIDE */
-@media only screen and (max-width: 700px) {
-  html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .wrap {
-    width: calc(100% - 20px) !important;
-    max-width: none !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .hero {
-    width: 100% !important;
-    margin: 0 !important;
-    border-radius: 0 0 24px 24px !important;
-  }
-
-  .hero-inner {
-    width: 100% !important;
-    min-height: 430px !important;
-    padding: 28px 16px !important;
-  }
-
-  .section {
-    width: 100% !important;
-    padding-top: 30px !important;
-  }
-
-  .grid {
-    width: 100% !important;
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
-
-  .card {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    transform: none !important;
-  }
-
-  .pic {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 16 / 9 !important;
-    overflow: hidden !important;
-    background: #f1f2f7 !important;
-  }
-
-  .pic img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    object-position: center center !important;
-  }
-
-  .card-body {
-    width: 100% !important;
-    padding: 14px !important;
-  }
-
-  .card-title {
-    font-size: 16px !important;
-    line-height: 1.7 !important;
-  }
-
-  .card-desc {
-    min-height: 0 !important;
-    font-size: 12px !important;
-    line-height: 1.8 !important;
-  }
-
-  .card-foot {
-    font-size: 12px !important;
-  }
-
-  .selection-actions,
-  .form-section {
-    width: 100% !important;
-  }
-
-  .panel {
-    width: 100% !important;
-  }
-}
-
-@media only screen and (max-width: 390px) {
-  .wrap {
-    width: calc(100% - 14px) !important;
-  }
-
-  .hero-inner {
-    padding: 24px 12px !important;
-  }
-
-  .pic {
-    aspect-ratio: 16 / 9 !important;
-  }
-
-  .card-body {
-    padding: 12px !important;
-  }
-}
-
-
-/* MOBILE IMAGE GAP FIX */
-@media only screen and (max-width: 700px) {
-  .pic {
-    height: auto !important;
-    aspect-ratio: auto !important;
-    display: block !important;
-    line-height: 0 !important;
-    overflow: hidden !important;
-  }
-
-  .pic img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    display: block !important;
-    object-fit: contain !important;
-    object-position: center !important;
-  }
-
-  .card-body {
-    padding-top: 12px !important;
-  }
-}
-
 </style>
 </head>
 <body>
@@ -267,14 +122,14 @@ footer{background:var(--navy);color:#fff;padding:27px 0}.footer-inner{display:fl
 const SCRIPT_URL="https://script.google.com/macros/s/AKfycbxp47PYmQOqLtRD0B7V5LA9xm9Uoc3_1yhQjs6EopFkIEs9lqLs2ipiCkZ8ptUjcX1Ro/exec";
 const WA="989134286813";
 const services=[
-["بازدید از محل","بازدید و بررسی رایگان مجموعه","service1.jpg"],
-["مشاوره رایگان","ارائه راهکار متناسب با نیاز شما","service2.jpg"],
-["استعلام قیمت","دریافت قیمت به‌روز تجهیزات","service3.jpg"],
-["دریافت لیست قیمت","لیست کامل تجهیزات و برندها","service4.jpg"],
-["دوربین و شبکه کارخانه","راهکار امنیتی برای مجموعه‌های صنعتی","service8.jpg"],
-["ارتقای سیستم قدیمی","تبدیل سیستم قدیمی به تحت شبکه","service7.jpg"],
-["عیب‌یابی و تعمیر","رفع مشکل و بازگرداندن عملکرد سیستم","service6.jpg"],
-["خرید و اجرای دوربین","نصب حرفه‌ای و استاندارد","service5.jpg"]
+["بازدید از محل","بازدید و بررسی رایگان مجموعه","service2.jpg"],
+["مشاوره رایگان","ارائه راهکار متناسب با نیاز شما","service3.jpg"],
+["استعلام قیمت","دریافت قیمت به‌روز تجهیزات","service4.jpg"],
+["دریافت لیست قیمت","لیست کامل تجهیزات و برندها","service5.jpg"],
+["دوربین و شبکه کارخانه","راهکار امنیتی برای مجموعه‌های صنعتی","service1.jpg"],
+["ارتقای سیستم قدیمی","تبدیل سیستم قدیمی به تحت شبکه","service8.jpg"],
+["عیب‌یابی و تعمیر","رفع مشکل و بازگرداندن عملکرد سیستم","service7.jpg"],
+["خرید و اجرای دوربین","نصب حرفه‌ای و استاندارد","service6.jpg"]
 ];
 const selected=new Set(), box=document.getElementById("services");
 
