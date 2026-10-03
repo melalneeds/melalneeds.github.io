@@ -35,7 +35,7 @@ h2{font-size:clamp(25px,4vw,36px);margin:7px 0;color:var(--text)}.section-head p
 .card{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;cursor:pointer;box-shadow:0 8px 25px rgba(25,31,80,.06);transition:.2s;min-width:0}
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
 .card.selected{border:2px solid var(--green);box-shadow:0 12px 35px rgba(32,184,102,.16)}
-.pic{height:175px;position:relative;overflow:hidden;background:#e9ebf5}.pic img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+.pic{height:175px;position:relative;overflow:hidden;background:#f1f2f7;display:flex;align-items:center;justify-content:center}.pic img{width:100%;height:100%;display:block;object-fit:contain;object-position:center}
 .card.selected .pic:after{content:"✓";position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:21px;font-weight:800;border:3px solid #fff}
 .card-body{padding:17px 17px 18px}.card-title{font-size:17px;font-weight:800;margin-bottom:7px}.card-desc{font-size:12.5px;color:var(--muted);line-height:1.9;min-height:45px}
 .card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:11px;color:var(--purple);font-size:12px;font-weight:700}
@@ -64,7 +64,7 @@ footer{background:var(--navy);color:#fff;padding:27px 0}.footer-inner{display:fl
 @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.hero-side{display:none}.hero-inner{justify-content:center;text-align:center}.brand{justify-content:center}}
 @media(max-width:620px){
 .wrap{width:min(100% - 18px,520px)}.hero{margin-top:8px;border-radius:0 0 25px 25px;min-height:470px}.hero-inner{min-height:470px;padding:30px 20px;align-items:center}.hero p{font-size:15px}.logo{width:68px;height:68px}
-.grid{grid-template-columns:1fr 1fr;gap:10px}.pic{height:145px}.card{border-radius:18px}.card-body{padding:13px 11px}.card-title{font-size:14px}.card-desc{font-size:11px;min-height:43px}.card-foot{font-size:10px}.arrow{width:26px;height:26px}
+.grid{grid-template-columns:1fr 1fr;gap:10px}.pic{height:145px;background:#f1f2f7}.card{border-radius:18px}.card-body{padding:13px 11px}.card-title{font-size:14px}.card-desc{font-size:11px;min-height:43px}.card-foot{font-size:10px}.arrow{width:26px;height:26px}
 .section{padding-top:35px}.selection-actions{flex-direction:column}.selection-status,.continue-btn{width:100%;text-align:center}.panel{padding:18px;border-radius:22px}.form-top{display:block}.selected-box{display:inline-block;margin-top:12px}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.actions{flex-direction:column}.primary,.secondary{width:100%}.contact-links{flex-direction:column}.footer-inner{flex-direction:column;text-align:center}
 }
 </style>
