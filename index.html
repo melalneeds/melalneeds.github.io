@@ -944,7 +944,32 @@ async function submitForm(){
   }
 
 }
+// =========================
+// ثبت بازدید سایت
+// =========================
 
+function registerVisit() {
+
+  const device =
+    window.innerWidth <= 768
+      ? "موبایل"
+      : "کامپیوتر";
+
+  fetch(API_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8"
+    },
+    body: JSON.stringify({
+      action: "visit",
+      source: "melalneeds.github.io",
+      device: device
+    })
+  }).catch(() => {});
+}
+
+registerVisit();
 </script>
 
 </body>
